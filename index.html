@@ -1,0 +1,1560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Story Bank: write STAR interview stories, see which skills they prove, prep for each interview, and practice out loud.">
+<style>[hidden]{display:none!important}body{margin:0}</style>
+</head>
+<body>
+<title>Story Bank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: an app with a deep-navy "stage" and bright cue cards. Each STAR part owns a color
+   (sky, mint, peach, highlighter) that follows it everywhere: badges, balance bars, guides, cue cards. */
+:root {
+  --bg: #F1F3F9;
+  --surface: #FFFFFF;
+  --raised: #FBFCFE;
+  --ink: #18213D;
+  --muted: #5B6383;
+  --faint: #8C93AD;
+  --line: #DCE1EE;
+  --soft: #E8ECF5;
+  --stage: #18213D;
+  --stage-2: #263463;
+  --stage-fg: #F4F6FC;
+  --stage-muted: #B1BAD6;
+  --S: #8CC4FF; --T: #8FE0BF; --A: #FFAE92; --R: #FFCD3C;
+  --S-soft: #E4F0FF; --T-soft: #DEF6EC; --A-soft: #FFEBE3; --R-soft: #FFF5D1;
+  --on-color: #18213D;
+  --btn-bg: #18213D; --btn-fg: #FFFFFF;
+  --focus: #3B5BDB;
+  --good: #1A7F4F; --good-bg: #DFF4E8; --warn: #A3610B; --warn-bg: #FCEFD8; --bad: #B4302A; --bad-bg: #FBE3E1;
+  --shadow: 0 1px 2px rgba(24,33,61,.05), 0 8px 24px rgba(24,33,61,.07);
+  --shadow-lg: 0 2px 6px rgba(24,33,61,.06), 0 22px 56px rgba(24,33,61,.14);
+  --scrim: rgba(12,16,32,.55);
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --r: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1120; --surface: #151B2E; --raised: #192036; --ink: #E9EDF7; --muted: #A3ABC6; --faint: #6E7694; --line: #283049; --soft: #1D253D;
+    --stage: #161E40; --stage-2: #253366; --stage-fg: #F4F6FC; --stage-muted: #B1BAD6;
+    --S: #7DB6F5; --T: #79D3AE; --A: #F59E80; --R: #F2C230;
+    --S-soft: #1A2A44; --T-soft: #17322A; --A-soft: #39251F; --R-soft: #383017;
+    --on-color: #131830; --btn-bg: #E9EDF7; --btn-fg: #0D1120; --focus: #8DA6FF;
+    --good: #63CF98; --good-bg: #163126; --warn: #E8AA55; --warn-bg: #352919; --bad: #F2887E; --bad-bg: #3B1F20;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25); --shadow-lg: 0 2px 6px rgba(0,0,0,.35), 0 22px 56px rgba(0,0,0,.4);
+    --scrim: rgba(3,5,12,.7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1120; --surface: #151B2E; --raised: #192036; --ink: #E9EDF7; --muted: #A3ABC6; --faint: #6E7694; --line: #283049; --soft: #1D253D;
+  --stage: #161E40; --stage-2: #253366; --stage-fg: #F4F6FC; --stage-muted: #B1BAD6;
+  --S: #7DB6F5; --T: #79D3AE; --A: #F59E80; --R: #F2C230;
+  --S-soft: #1A2A44; --T-soft: #17322A; --A-soft: #39251F; --R-soft: #383017;
+  --on-color: #131830; --btn-bg: #E9EDF7; --btn-fg: #0D1120; --focus: #8DA6FF;
+  --good: #63CF98; --good-bg: #163126; --warn: #E8AA55; --warn-bg: #352919; --bad: #F2887E; --bad-bg: #3B1F20;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25); --shadow-lg: 0 2px 6px rgba(0,0,0,.35), 0 22px 56px rgba(0,0,0,.4);
+  --scrim: rgba(3,5,12,.7);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15.5px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+body.locked { overflow: hidden; }
+button, input, textarea, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+mark { background: linear-gradient(transparent 14%, var(--R) 14%, var(--R) 86%, transparent 86%); color: var(--on-color); padding: 0 .1em; border-radius: 2px; }
+.blank { border: 1.5px dashed var(--warn); color: var(--warn); border-radius: 6px; padding: 0 5px; font-size: .92em; background: var(--warn-bg); }
+h1, h2, h3, .h3 { font-family: var(--f-display); letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+h2 { font-weight: 700; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.15; }
+h3, .h3 { font-weight: 700; font-size: 17px; line-height: 1.25; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.lbl { display: block; font-family: var(--f-mono); font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 6px; }
+.lede { color: var(--muted); max-width: 64ch; }
+.stack { display: flex; flex-direction: column; gap: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.between { justify-content: space-between; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.view { animation: rise .35s cubic-bezier(.2,.7,.3,1) both; }
+@keyframes rise { from { transform: translateY(8px); } to { transform: none; } }
+
+/* App frame */
+.app { max-width: 1200px; margin: 0 auto; padding-inline: 20px; padding-block: 16px 64px; }
+@media (max-width: 520px) { .app { padding-inline: 16px; } }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 18px; }
+.logo { display: flex; align-items: center; gap: 10px; font-family: var(--f-display); font-weight: 800; font-size: 22px; letter-spacing: -.02em; border: 0; background: none; cursor: pointer; padding: 0; }
+.logo svg { flex: none; }
+nav.tabs { display: flex; gap: 2px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 4px; box-shadow: var(--shadow); }
+nav.tabs button { border: 0; background: none; padding: 8px 14px; border-radius: 10px; font-weight: 600; font-size: 14px; color: var(--muted); cursor: pointer; display: inline-flex; gap: 7px; align-items: center; white-space: nowrap; transition: background .15s, color .15s; }
+nav.tabs button:hover { color: var(--ink); background: var(--soft); }
+nav.tabs button[aria-current="page"] { background: var(--btn-bg); color: var(--btn-fg); }
+nav.tabs svg { width: 16px; height: 16px; flex: none; }
+.tools { display: flex; align-items: center; gap: 10px; }
+.status { font-size: 12.5px; color: var(--muted); display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--good); display: inline-block; }
+.status.local i { background: var(--warn); }
+.status.saving i { background: var(--focus); animation: pulse 1s infinite; }
+@keyframes pulse { 50% { opacity: .3; } }
+.iconbtn { width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; cursor: pointer; color: var(--muted); }
+.iconbtn:hover { color: var(--ink); }
+.iconbtn svg { width: 18px; height: 18px; }
+@media (max-width: 1060px) { nav.tabs button { padding: 8px 10px; } .status span { display: none; } }
+@media (max-width: 780px) {
+  .topbar nav.tabs { display: none; }
+  nav.bottom { display: flex !important; }
+  .app { padding-block-end: calc(100px + env(safe-area-inset-bottom, 0px)); }
+}
+nav.bottom { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--line); padding: 6px 6px calc(6px + env(safe-area-inset-bottom, 0px)); justify-content: space-around; }
+nav.bottom button { flex: 1; border: 0; background: none; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 2px; font-size: 11px; font-weight: 600; color: var(--muted); border-radius: 12px; cursor: pointer; min-width: 0; }
+nav.bottom button[aria-current="page"] { color: var(--ink); background: var(--soft); }
+nav.bottom svg { width: 22px; height: 22px; }
+
+/* Buttons and inputs */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 11px; padding: 10px 16px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-weight: 600; font-size: 14.5px; cursor: pointer; transition: transform .12s ease, box-shadow .15s ease, opacity .12s, background .15s; text-decoration: none; }
+.btn:hover { box-shadow: var(--shadow); }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: var(--btn-bg); color: var(--btn-fg); border-color: var(--btn-bg); }
+.btn.bright { background: var(--R); color: var(--on-color); border-color: var(--R); box-shadow: 0 6px 20px color-mix(in srgb, var(--R) 35%, transparent); }
+.btn.ghost { background: transparent; border-color: transparent; color: var(--muted); }
+.btn.ghost:hover { color: var(--ink); background: var(--soft); box-shadow: none; }
+.btn.danger { color: var(--bad); }
+.btn.danger.armed { background: var(--bad); color: #fff; border-color: var(--bad); }
+.btn.small { padding: 7px 11px; font-size: 13px; border-radius: 9px; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; box-shadow: none; }
+.btn svg { width: 16px; height: 16px; flex: none; }
+.ai { font-family: var(--f-mono); font-size: 10.5px; font-weight: 600; background: var(--R); color: var(--on-color); border-radius: 5px; padding: 1px 5px; }
+input[type="text"], input[type="search"], input[type="date"], textarea, select { width: 100%; background: var(--surface); border: 1.5px solid var(--line); border-radius: 11px; padding: 10px 12px; outline: none; transition: border-color .12s, box-shadow .12s; }
+input:focus, textarea:focus, select:focus { border-color: var(--focus); box-shadow: 0 0 0 4px color-mix(in srgb, var(--focus) 16%, transparent); }
+textarea { resize: vertical; min-height: 70px; line-height: 1.6; }
+input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--good); flex: none; margin: 0; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); white-space: nowrap; }
+button.chip { cursor: pointer; }
+button.chip:hover { color: var(--ink); border-color: var(--faint); }
+.chip.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip.ex { border-style: dashed; color: var(--warn); border-color: var(--warn); background: transparent; }
+.chip.draft { border-style: dashed; color: var(--focus); border-color: var(--focus); background: transparent; }
+.state { font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 99px; white-space: nowrap; }
+.state.good { color: var(--good); background: var(--good-bg); }
+.state.warn { color: var(--warn); background: var(--warn-bg); }
+.state.bad { color: var(--bad); background: var(--bad-bg); }
+.state.info { color: var(--ink); background: var(--soft); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+.meter { display: inline-flex; gap: 3px; align-items: center; }
+.meter b { width: 12px; height: 6px; border-radius: 3px; background: var(--soft); display: block; }
+.meter b.on { background: var(--faint); }
+.meter.hi b.on { background: var(--good); }
+.L { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; font-family: var(--f-display); font-weight: 800; font-size: 15px; color: var(--on-color); flex: none; background: var(--soft); }
+.L.s { background: var(--S); } .L.t { background: var(--T); } .L.a { background: var(--A); } .L.r { background: var(--R); }
+.balance { display: flex; height: 6px; border-radius: 99px; overflow: hidden; background: var(--soft); gap: 2px; }
+.balance i { display: block; min-width: 3px; }
+.balance .s { background: var(--S); } .balance .t { background: var(--T); } .balance .a { background: var(--A); } .balance .r { background: var(--R); }
+
+/* Stage (hero) */
+.stage { background: var(--stage); color: var(--stage-fg); border-radius: 26px; padding: clamp(24px, 4vw, 44px); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; align-items: center; position: relative; overflow: hidden; isolation: isolate; }
+.stage::before, .stage::after { content: ""; position: absolute; border-radius: 50%; filter: blur(60px); z-index: -1; opacity: .5; }
+.stage::before { width: 420px; height: 420px; right: -80px; top: -140px; background: radial-gradient(circle, var(--stage-2), transparent 70%); opacity: 1; }
+.stage::after { width: 280px; height: 280px; right: 22%; bottom: -170px; background: radial-gradient(circle, color-mix(in srgb, var(--R) 45%, transparent), transparent 70%); opacity: .35; }
+@media (max-width: 840px) { .stage { grid-template-columns: minmax(0, 1fr); } .stage .art { display: none; } }
+.stage h1 { font-weight: 800; font-size: clamp(31px, 4.6vw, 52px); line-height: 1.02; letter-spacing: -.03em; }
+.stage h1 mark { color: var(--on-color); }
+.stage p { color: var(--stage-muted); font-size: 16.5px; max-width: 46ch; }
+.stage .btn { border-color: transparent; }
+.stage .btn.ghost { color: var(--stage-fg); border-color: rgba(255,255,255,.22); }
+.stage .btn.ghost:hover { background: rgba(255,255,255,.08); }
+.glass { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.13); border-radius: 18px; }
+.hero-boxes { display: flex; flex-wrap: wrap; gap: 10px; }
+.readiness { display: flex; align-items: center; gap: 16px; padding: 14px 18px; color: inherit; text-align: left; cursor: pointer; transition: background .15s; }
+.readiness:hover { background: rgba(255,255,255,.11); }
+.ring { position: relative; width: 76px; height: 76px; flex: none; }
+.ring svg, .tring svg, .mini-ring svg { transform: rotate(-90deg); display: block; }
+.ring b { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 21px; }
+.stage .lbl { color: var(--stage-muted); margin: 0 0 2px; }
+.readiness .next, .nextiv .next { font-weight: 600; font-size: 15px; }
+.nextiv { padding: 14px 18px; display: flex; flex-direction: column; gap: 4px; color: inherit; text-align: left; cursor: pointer; }
+.nextiv:hover { background: rgba(255,255,255,.11); }
+.nextiv .when { font-family: var(--f-display); font-weight: 800; font-size: 26px; line-height: 1; color: var(--R); }
+.breakdown { padding: 16px 18px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 640px) { .breakdown { grid-template-columns: minmax(0, 1fr); } }
+.breakdown .bar { background: rgba(255,255,255,.12); }
+.breakdown .bar .fill { background: var(--R); }
+.breakdown p { font-size: 13.5px; }
+.art svg { width: 100%; height: auto; display: block; overflow: visible; }
+.art .float { animation: float 6s ease-in-out infinite; }
+.art .float.d2 { animation-delay: -2s; } .art .float.d3 { animation-delay: -4s; }
+@keyframes float { 50% { transform: translateY(-7px); } }
+@media (prefers-reduced-motion: reduce) { .art .float, .status.saving i, .loading::before, .view, .sheet, .cue-card { animation: none !important; } }
+
+/* Home */
+.home { display: flex; flex-direction: column; gap: 36px; }
+.sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px; margin-bottom: 16px; }
+.sec-head .lede { margin-top: 4px; }
+.path { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 960px) { .path { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .path { grid-template-columns: minmax(0, 1fr); } }
+.step { padding: 18px; display: flex; flex-direction: column; gap: 10px; text-align: left; cursor: pointer; transition: transform .18s, box-shadow .18s; }
+.step:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.step .num { font-family: var(--f-mono); font-size: 12px; font-weight: 600; color: var(--muted); display: flex; justify-content: space-between; align-items: center; min-height: 22px; }
+.step .icon { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; color: var(--on-color); }
+.step .icon svg { width: 24px; height: 24px; }
+.step p { color: var(--muted); font-size: 14px; }
+.step .go { font-weight: 700; font-size: 14px; margin-top: auto; }
+.step.done { background: color-mix(in srgb, var(--good-bg) 55%, var(--surface)); }
+.step.now { border: 1.5px solid var(--ink); box-shadow: var(--shadow); }
+.tick { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--good); color: #fff; font-size: 13px; font-weight: 800; }
+.explain { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); overflow: hidden; }
+@media (max-width: 840px) { .explain { grid-template-columns: minmax(0, 1fr); } }
+.explain .intro { padding: 26px; background: var(--soft); display: flex; flex-direction: column; gap: 10px; }
+.explain .parts { padding: 8px 26px; }
+.parts { display: flex; flex-direction: column; }
+.part { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 14px; padding: 14px 0; border-top: 1px solid var(--line); }
+.part:first-child { border-top: 0; }
+.part .L { width: 34px; height: 34px; font-size: 18px; }
+.part b { display: block; }
+.part .eg { font-size: 14px; color: var(--muted); margin-top: 3px; }
+
+/* Split lists (stories, interviews) */
+.split { display: grid; grid-template-columns: minmax(290px, 360px) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 900px) { .split { grid-template-columns: minmax(0, 1fr); } .split.editing .lib { display: none; } .split:not(.editing) .edcol { display: none; } }
+.lib { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.lib-tools { display: flex; gap: 8px; }
+.lib-tools input { flex: 1; min-width: 0; }
+.tagbar { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.cards { display: flex; flex-direction: column; gap: 10px; }
+.scard { text-align: left; width: 100%; background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--r); padding: 14px 16px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; transition: box-shadow .15s, border-color .15s, transform .15s; }
+.scard:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+.scard.sel { border-color: var(--ink); box-shadow: var(--shadow); }
+.scard .t { font-weight: 700; font-size: 15.5px; line-height: 1.3; display: flex; gap: 6px; align-items: flex-start; justify-content: space-between; }
+.scard .pin { color: var(--warn); flex: none; }
+.scard .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; font-size: 12.5px; color: var(--muted); }
+.scard .res { font-size: 13.5px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.scard .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.empty { padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.empty svg { width: 130px; height: auto; }
+
+/* Editor */
+.editor { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.ed-head { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; }
+.seg { display: inline-flex; background: var(--soft); border-radius: 11px; padding: 3px; }
+.seg button { border: 0; background: none; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.title-in { font-family: var(--f-display); font-weight: 700; font-size: clamp(20px, 2.4vw, 25px) !important; border: 0 !important; padding: 2px 0 6px !important; background: transparent !important; box-shadow: none !important; border-bottom: 2px dashed var(--line) !important; border-radius: 0 !important; }
+.title-in:focus { border-bottom-color: var(--focus) !important; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.three { display: grid; grid-template-columns: 1.3fr 1.3fr 1fr; gap: 12px; }
+@media (max-width: 640px) { .two, .three { grid-template-columns: 1fr; } }
+.ed-body { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 22px; align-items: start; }
+@media (max-width: 1100px) { .ed-body { grid-template-columns: minmax(0, 1fr); } }
+.fields { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.fld { border-radius: 14px; padding: 14px; background: var(--fill, var(--soft)); }
+.fld.s { --fill: var(--S-soft); } .fld.t { --fill: var(--T-soft); } .fld.a { --fill: var(--A-soft); } .fld.r { --fill: var(--R-soft); }
+.fld .fh { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.fld .fh label { font-weight: 700; }
+.fld .fh .wc { margin-left: auto; font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); }
+.fld .hint { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.tagpick { display: flex; flex-wrap: wrap; gap: 6px; }
+.progress { display: flex; gap: 6px; }
+.progress span { flex: 1; height: 6px; border-radius: 99px; background: var(--soft); transition: background .2s; }
+.progress span.done { background: var(--ink); }
+.progress span.now { background: var(--focus); }
+.gstep { display: flex; flex-direction: column; gap: 16px; }
+.gstep .big { display: flex; align-items: center; gap: 14px; }
+.gstep .big .L { width: 54px; height: 54px; font-size: 28px; border-radius: 15px; }
+.gstep .big h3, .gstep h3.lg { font-size: 22px; }
+.asks { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.asks li { display: grid; grid-template-columns: 18px 1fr; gap: 8px; color: var(--muted); font-size: 15px; }
+.asks li::before { content: "?"; font-family: var(--f-mono); font-weight: 700; color: var(--ink); }
+.gstep textarea { min-height: 170px; font-size: 16px; }
+.gnav { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 16px; }
+.side { padding: 16px; display: flex; flex-direction: column; gap: 16px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--r); position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); }
+.clock { display: flex; align-items: baseline; gap: 8px; }
+.clock .big { font-family: var(--f-mono); font-weight: 600; font-size: 30px; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.bar { height: 8px; border-radius: 99px; background: var(--soft); position: relative; overflow: hidden; }
+.bar .zone { position: absolute; top: 0; bottom: 0; background: color-mix(in srgb, var(--good) 24%, transparent); }
+.bar .fill { position: absolute; top: 0; bottom: 0; left: 0; background: var(--ink); border-radius: 99px; transition: width .25s; }
+.scale { display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 10px; color: var(--faint); margin-top: 4px; }
+ul.ck { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; }
+ul.ck li { display: grid; grid-template-columns: 20px 1fr; gap: 8px; align-items: start; }
+ul.ck .ic { width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 800; margin-top: 1px; }
+ul.ck .ok .ic { background: var(--good); color: #fff; }
+ul.ck .no .ic { background: var(--soft); border: 1.5px solid var(--line); }
+ul.ck .no { color: var(--muted); }
+ul.ck small { display: block; color: var(--faint); font-size: 12px; }
+.tipbox { border-radius: 12px; padding: 12px 14px; font-size: 14px; background: var(--fill, var(--soft)); }
+.tipbox b { display: block; margin-bottom: 4px; }
+.tipbox.s { --fill: var(--S-soft); } .tipbox.t { --fill: var(--T-soft); } .tipbox.a { --fill: var(--A-soft); } .tipbox.r { --fill: var(--R-soft); }
+.tipbox .eg { font-style: italic; color: var(--muted); margin-top: 6px; }
+.coach { border-top: 1px solid var(--line); padding-top: 20px; display: flex; flex-direction: column; gap: 14px; }
+.coach .verdict { font-size: 17px; font-weight: 600; }
+.coach ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.fix { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; }
+.spoken { background: var(--bg); border-radius: 12px; padding: 14px 16px; font-size: 15.5px; line-height: 1.7; white-space: pre-wrap; }
+.loading { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; }
+.loading::before { content: ""; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--line); border-top-color: var(--ink); animation: spin .8s linear infinite; flex: none; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.err { color: var(--bad); background: var(--bad-bg); border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+.note { font-size: 13px; color: var(--muted); }
+
+/* Interviews */
+.icard { text-align: left; width: 100%; background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--r); padding: 14px 16px; cursor: pointer; display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 14px; align-items: center; transition: box-shadow .15s, border-color .15s, transform .15s; }
+.icard:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+.icard.sel { border-color: var(--ink); box-shadow: var(--shadow); }
+.icard.past { opacity: .78; }
+.cal { display: block; width: 56px; border-radius: 12px; overflow: hidden; text-align: center; border: 1px solid var(--line); background: var(--raised); }
+.cal .m, .cal .d { display: block; }
+.cal .m { background: var(--A); color: var(--on-color); font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 0; }
+.cal .d { font-family: var(--f-display); font-weight: 800; font-size: 22px; line-height: 1.25; padding: 2px 0 3px; }
+.cal.none .m { background: var(--soft); color: var(--muted); }
+.icard .co { font-weight: 700; font-size: 15.5px; line-height: 1.25; }
+.icard .ro { font-size: 13.5px; color: var(--muted); }
+.mini-ring { position: relative; width: 40px; height: 40px; }
+.mini-ring b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 11px; font-weight: 700; font-family: var(--f-mono); }
+.ivhead { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-start; }
+.countdown { font-family: var(--f-display); font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -.02em; }
+.section { display: flex; flex-direction: column; gap: 12px; padding-top: 18px; border-top: 1px solid var(--line); }
+.section > .row.between h3 { display: flex; align-items: center; gap: 8px; }
+.checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.checklist li { display: flex; gap: 12px; align-items: center; padding: 10px 12px; background: var(--bg); border-radius: 12px; font-size: 14.5px; }
+.checklist li.ok { color: var(--muted); }
+.checklist li.ok span.t { text-decoration: line-through; text-decoration-color: var(--faint); }
+.checklist .auto { margin-left: auto; font-size: 11.5px; color: var(--faint); font-family: var(--f-mono); }
+.dot { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--line); flex: none; display: grid; place-items: center; font-size: 11px; font-weight: 800; }
+.ok .dot { background: var(--good); border-color: var(--good); color: #fff; }
+.qa { padding: 14px 16px; display: flex; flex-direction: column; gap: 9px; }
+.qa .q { font-weight: 700; font-size: 15px; }
+.qa .angle { font-size: 14px; color: var(--muted); border-left: 3px solid var(--R); padding-left: 10px; }
+.gap { padding: 12px 14px; border-left: 4px solid var(--bad); }
+.asked { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.asked li { display: flex; justify-content: space-between; gap: 10px; align-items: center; padding: 9px 12px; background: var(--bg); border-radius: 10px; font-size: 14px; }
+.addq { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) auto; gap: 8px; }
+@media (max-width: 640px) { .addq { grid-template-columns: 1fr; } }
+.rate { display: flex; gap: 6px; }
+.rate button { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); font-weight: 700; cursor: pointer; }
+.rate button.on { background: var(--R); color: var(--on-color); border-color: var(--R); }
+.preview { padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+.preview ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: var(--muted); }
+
+/* Coverage */
+.cov-sum { display: flex; gap: 10px; flex-wrap: wrap; }
+.cov-sum .pill { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-weight: 600; }
+.cov-sum b { font-family: var(--f-display); font-size: 22px; font-weight: 800; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.tile { padding: 16px; display: flex; flex-direction: column; gap: 10px; text-align: left; cursor: pointer; transition: transform .18s, box-shadow .18s; }
+.tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.tile .tr { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.tile .dots { display: flex; gap: 4px; }
+.tile .dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--soft); border: 1px solid var(--line); }
+.tile.good .dots i.on { background: var(--good); border-color: var(--good); } .tile.warn .dots i.on { background: var(--warn); border-color: var(--warn); }
+.tile .sub { font-size: 13.5px; color: var(--muted); }
+.tile .act { font-size: 13.5px; font-weight: 700; margin-top: auto; }
+
+/* Practice */
+.prac { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 920px) { .prac { grid-template-columns: minmax(0, 1fr); } }
+.qstage { background: var(--stage); color: var(--stage-fg); border-radius: 26px; padding: clamp(22px, 3.5vw, 34px); display: flex; flex-direction: column; gap: 20px; min-width: 0; position: relative; overflow: hidden; isolation: isolate; }
+.qstage::before { content: ""; position: absolute; width: 380px; height: 380px; right: -120px; top: -160px; border-radius: 50%; background: radial-gradient(circle, var(--stage-2), transparent 70%); z-index: -1; filter: blur(40px); }
+.qstage .qtext { font-family: var(--f-display); font-weight: 700; font-size: clamp(24px, 3.2vw, 34px); line-height: 1.15; letter-spacing: -.02em; text-wrap: balance; }
+.qstage .lbl { color: var(--stage-muted); }
+.qstage select { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); color: var(--stage-fg); }
+.qstage select option { color: #18213D; background: #FFFFFF; }
+.qstage .chip { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.18); color: var(--stage-fg); }
+.qstage .btn.ghost { color: var(--stage-fg); }
+.qstage .btn.ghost:hover { background: rgba(255,255,255,.08); }
+.qstage .rate button { border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.06); color: var(--stage-fg); }
+.qstage .rate button.on { background: var(--R); color: var(--on-color); border-color: var(--R); }
+.timer-wrap { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.tring { position: relative; width: 120px; height: 120px; flex: none; }
+.tring .tv { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--f-mono); font-weight: 600; font-size: 26px; font-variant-numeric: tabular-nums; }
+.followup { background: rgba(255,255,255,.08); border-radius: 12px; padding: 12px 14px; font-weight: 600; }
+.qstage details summary { cursor: pointer; color: var(--stage-muted); font-size: 14px; }
+.qstage .spoken { background: rgba(255,255,255,.06); color: var(--stage-fg); }
+.log, .tips { padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.log ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+.log li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 13.5px; }
+.log li:first-child { border-top: 0; }
+.tips ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 14px; }
+
+/* Overlays */
+.overlay { position: fixed; inset: 0; z-index: 40; background: var(--scrim); display: flex; align-items: center; justify-content: center; padding: calc(env(safe-area-inset-top, 0px) + 16px) 16px calc(env(safe-area-inset-bottom, 0px) + 16px); }
+.sheet { background: var(--surface); border-radius: 22px; width: min(760px, 100%); max-height: 100%; overflow: auto; box-shadow: var(--shadow-lg); padding: 24px; display: flex; flex-direction: column; gap: 16px; animation: pop .25s cubic-bezier(.2,.8,.3,1.1) both; }
+@keyframes pop { from { transform: translateY(12px) scale(.98); } to { transform: none; } }
+.sheet textarea { min-height: 230px; font-size: 14px; }
+.drafts { display: flex; flex-direction: column; gap: 10px; }
+.dcard { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 12px; padding: 14px; border: 1.5px solid var(--line); border-radius: 14px; cursor: pointer; }
+.dcard.on { border-color: var(--ink); background: var(--raised); }
+.dcard .dt { font-weight: 700; }
+.dcard .ds { font-size: 13.5px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.cue { background: radial-gradient(120% 120% at 100% 0%, var(--stage-2), var(--stage) 60%); flex-direction: column; gap: 16px; color: var(--stage-fg); }
+.cue-top { width: min(820px, 100%); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.cue-top .btn.ghost { color: var(--stage-fg); border-color: rgba(255,255,255,.2); }
+.cue-top .btn.ghost:hover { background: rgba(255,255,255,.08); }
+.cue-card { width: min(820px, 100%); flex: 1; max-height: 620px; min-height: 0; background: var(--surface); color: var(--ink); border-radius: 26px; padding: clamp(22px, 4vw, 40px); display: flex; flex-direction: column; gap: 18px; overflow: auto; box-shadow: 0 30px 80px rgba(0,0,0,.35); animation: pop .28s cubic-bezier(.2,.8,.3,1.1) both; touch-action: pan-y; }
+.cue-card h2 { font-size: clamp(26px, 3.6vw, 38px); }
+.cue-row { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: start; }
+.cue-row .L { width: 40px; height: 40px; font-size: 20px; border-radius: 11px; }
+.cue-row .txt { font-size: clamp(16px, 2vw, 19px); line-height: 1.5; }
+.beats { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; counter-reset: b; }
+.beats li { counter-increment: b; display: grid; grid-template-columns: 26px 1fr; gap: 8px; font-size: clamp(15.5px, 1.9vw, 18px); line-height: 1.45; }
+.beats li::before { content: counter(b); font-family: var(--f-mono); font-weight: 600; color: var(--muted); padding-top: 2px; }
+.cue-nav { width: min(820px, 100%); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.cue-nav .btn { background: rgba(255,255,255,.1); color: var(--stage-fg); border-color: rgba(255,255,255,.18); }
+.cue-dots { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.cue-dots i { width: 8px; height: 8px; border-radius: 99px; background: rgba(255,255,255,.25); transition: width .2s, background .2s; }
+.cue-dots i.on { width: 22px; background: var(--R); }
+
+.toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 24px); transform: translateX(-50%); background: var(--btn-bg); color: var(--btn-fg); padding: 11px 18px; border-radius: 12px; font-size: 14px; font-weight: 600; box-shadow: var(--shadow-lg); z-index: 60; max-width: calc(100% - 32px); }
+@media (max-width: 780px) { .toast { bottom: calc(env(safe-area-inset-bottom, 0px) + 88px); } }
+#confetti { position: fixed; inset: 0; pointer-events: none; z-index: 70; }
+</style>
+
+<div class="app">
+  <header class="topbar">
+    <button class="logo" data-tab="home" aria-label="Story Bank home">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="3" y="7" width="22" height="16" rx="3" fill="var(--S)" transform="rotate(-8 14 15)"/><rect x="9" y="11" width="22" height="16" rx="3" fill="var(--R)"/><rect x="13" y="16" width="12" height="2.4" rx="1.2" fill="var(--on-color)"/><rect x="13" y="20.5" width="8" height="2.4" rx="1.2" fill="var(--on-color)" opacity=".6"/></svg>
+      Story Bank
+    </button>
+    <nav class="tabs" id="tabs" aria-label="Sections"></nav>
+    <div class="tools">
+      <div id="status" class="status" aria-live="polite"><i></i><span>Loading</span></div>
+      <button class="iconbtn" id="themebtn" data-act="theme" aria-label="Change theme"></button>
+    </div>
+  </header>
+  <main id="main"></main>
+</div>
+<nav class="bottom" id="btabs" aria-label="Sections"></nav>
+<div id="overlay"></div>
+<div id="toast" class="toast" hidden role="status"></div>
+<canvas id="confetti" hidden></canvas>
+
+<script>
+(() => {
+// ================= Reference data =================
+const COMP = [
+  { id: "leadership", name: "Leadership", kw: ["lead", "mentor", "supervis", "ownership", "own the", "coach"] },
+  { id: "conflict", name: "Conflict", kw: ["conflict", "disagree", "difficult", "push back", "pushback", "tension", "negotiat"] },
+  { id: "failure", name: "Failure and learning", kw: ["fail", "mistake", "learn", "setback", "feedback", "growth"] },
+  { id: "prioritization", name: "Prioritization", kw: ["priorit", "backlog", "trade-off", "tradeoff", "roadmap", "deadline", "scope"] },
+  { id: "stakeholders", name: "Stakeholders", kw: ["stakeholder", "cross-functional", "collaborat", "partner", "align", "relationship"] },
+  { id: "data", name: "Data-driven", kw: ["data", "metric", "kpi", "okr", "analytic", "measur", "insight", "report"] },
+  { id: "customer", name: "Customer focus", kw: ["customer", "user", "member", "client", "experience", "journey", "feedback"] },
+  { id: "ambiguity", name: "Ambiguity", kw: ["ambigu", "uncertain", "fast-paced", "startup", "change", "independent"] },
+  { id: "influence", name: "Influence", kw: ["influence", "persua", "communicat", "present", "convinc", "vision"] },
+  { id: "delivery", name: "Delivery", kw: ["deliver", "ship", "launch", "execut", "agile", "scrum", "sprint", "lifecycle", "built", "develop"] },
+  { id: "compliance", name: "Accuracy and compliance", kw: ["complian", "regulat", "risk", "secur", "accura", "audit", "policy", "hipaa", "payroll"] },
+  { id: "technical", name: "Technical depth", kw: ["technical", "engineer", "architect", "api", "system", "scalab", "integrat", "react", "sql"] },
+];
+const CNAME = Object.fromEntries(COMP.map(c => [c.id, c.name]));
+const QUESTIONS = [
+  { q: "Tell me about a time you led a project without formal authority.", c: ["leadership", "influence"] },
+  { q: "Describe a time you mentored or developed someone on your team.", c: ["leadership"] },
+  { q: "Tell me about a time you took ownership of something outside your role.", c: ["leadership", "ambiguity"] },
+  { q: "Tell me about a time you disagreed with a teammate or manager.", c: ["conflict", "influence"] },
+  { q: "Describe a time you worked with a difficult stakeholder.", c: ["conflict", "stakeholders"] },
+  { q: "Tell me about a time you failed.", c: ["failure"] },
+  { q: "Describe a mistake you made and what you changed afterward.", c: ["failure", "compliance"] },
+  { q: "Tell me about a time you received critical feedback.", c: ["failure"] },
+  { q: "How did you decide what to work on when everything felt urgent?", c: ["prioritization"] },
+  { q: "Tell me about a time you had to say no to a request.", c: ["prioritization", "stakeholders"] },
+  { q: "Describe a time you cut scope to hit a deadline.", c: ["prioritization", "delivery"] },
+  { q: "Tell me about a time you aligned several teams around one goal.", c: ["stakeholders", "influence"] },
+  { q: "Describe how you kept stakeholders informed during a project.", c: ["stakeholders"] },
+  { q: "Tell me about a decision you made using data.", c: ["data"] },
+  { q: "Describe a metric you tracked and what you did when it moved.", c: ["data", "delivery"] },
+  { q: "Tell me about a time you used customer feedback to change something.", c: ["customer"] },
+  { q: "Describe a time you advocated for the user under pressure.", c: ["customer", "influence"] },
+  { q: "Tell me about a time you worked with unclear requirements.", c: ["ambiguity"] },
+  { q: "Describe a time priorities changed suddenly. What did you do?", c: ["ambiguity", "prioritization"] },
+  { q: "Tell me about a time you convinced someone to change their mind.", c: ["influence"] },
+  { q: "Describe a time you explained something technical to a non-technical audience.", c: ["influence", "technical"] },
+  { q: "Tell me about a project you shipped that you are proud of.", c: ["delivery"] },
+  { q: "Describe a time a project was at risk of missing its deadline.", c: ["delivery", "ambiguity"] },
+  { q: "Tell me about a time accuracy really mattered in your work.", c: ["compliance"] },
+  { q: "Describe how you handled sensitive or regulated information.", c: ["compliance"] },
+  { q: "Tell me about a technical trade-off you made and why.", c: ["technical", "prioritization"] },
+  { q: "Describe a time you worked with engineers to solve a hard problem.", c: ["technical", "stakeholders"] },
+  { q: "Tell me about a product or process you improved. How did you know it worked?", c: ["customer", "data", "delivery"] },
+  { q: "Walk me through how you wrote requirements or user stories for a feature.", c: ["delivery", "technical"] },
+  { q: "Tell me about a time you turned a recurring problem into a lasting fix.", c: ["customer", "delivery"] },
+];
+const GUIDE = {
+  s: { name: "Situation", one: "Set the scene", asks: ["Where were you working, and what was your role?", "What was going wrong, or what was at stake?"], tip: "One or two sentences is enough. The interviewer mostly wants to hear what you did.", eg: "Our sign-up flow had seven screens, and support kept hearing that people got stuck on the ID step." },
+  t: { name: "Task", one: "Your responsibility", asks: ["What were you asked to do, or what did you decide to take on?", "Why did it matter, and by when?"], tip: "Make it clear this problem was yours to solve.", eg: "I was asked to find out why people were quitting sign-up and fix the biggest cause within one sprint." },
+  a: { name: "Action", one: "What you did", asks: ["What did you do first?", "Which decisions did you make, and why?", "Who did you work with, and how did you bring them along?"], tip: "Make this the longest part. Say \"I\", not \"we\", so it's clear what you personally did.", eg: "I pulled the funnel data, sat in on five support calls, and proposed moving ID upload to after the first login." },
+  r: { name: "Result", one: "What changed", asks: ["What happened because of your work?", "Can you put a number on it: percent, hours, dollars, errors?", "What did you learn or do differently afterward?"], tip: "A number makes a result memorable. A careful estimate is fine if you say it's an estimate.", eg: "Completed sign-ups rose from 52% to 68% in the next month." },
+};
+const PARTS = ["s", "t", "a", "r"];
+const STAGES = ["Recruiter screen", "Hiring manager", "Panel", "Case or take-home", "Final round", "Other"];
+const OUTCOMES = ["Waiting to hear", "Next round", "Offer", "Not selected"];
+const EXAMPLES = [
+  { title: "Cut sign-up drop-off by simplifying onboarding", role: "Software Engineer, Example Co.", when: "2023", tags: ["customer", "data", "delivery"],
+    s: "Our sign-up flow had seven screens, and support tickets kept mentioning people getting stuck on the identity step.",
+    t: "I was asked to find out why new users were abandoning sign-up and fix the biggest cause within one sprint.",
+    a: "I pulled the funnel data and saw that 40% of drop-offs happened on the identity screen. To understand why, I sat in on five support calls and heard the same thing each time: people did not have their ID with them when they signed up on their phones. I proposed moving ID upload to after the first login and merging two short screens into one. I wrote the user stories and acceptance criteria, reviewed them with the support lead so the fix matched what users described, and worked with QA to test the new flow on mobile before release. I also set up a weekly funnel report so we could see the effect quickly.",
+    r: "Completed sign-ups rose from 52% to 68% in the next month, and identity-related tickets fell by half.", lesson: "Watching real users beat guessing from the dashboard alone." },
+  { title: "Resolved a disagreement over what to build first", role: "Program Analyst, Example Co.", when: "2024", tags: ["conflict", "prioritization", "stakeholders"],
+    s: "Finance and operations each wanted their report automated first, and both leads escalated to my manager.",
+    t: "I needed to agree on one order of work without losing either team's trust.",
+    a: "I met each lead separately to learn what was really driving their request. Finance was worried about a month-end close in three weeks, while operations was losing hours every week to manual data entry. I put both requests in a simple table showing hours saved per month, the cost of waiting, and the effort to build. Then I brought both leads together, walked them through the table, and proposed a small manual workaround for finance's month-end need so I could build the operations automation first. I agreed on check-in dates with both of them so neither felt forgotten.",
+    r: "Both leads agreed in one meeting. Finance's month-end close went out on time, and operations got their automation two weeks later, saving about 6 hours a week.", lesson: "Making the trade-off visible took the emotion out of it." },
+  { title: "Missed a reporting deadline and rebuilt the process", role: "Coordinator, Example Co.", when: "2022", tags: ["failure", "compliance"],
+    s: "I owned a monthly compliance report, and one month I submitted it two days late because two source files arrived late.",
+    t: "I had to own the miss with my manager and make sure it could not happen again.",
+    a: "I told my manager about the delay before anyone asked, explained the cause, and gave a firm recovery date, which I met. Then I looked at the last six months of the report and found the same two inputs had arrived late three times. I built a checklist with a due date for each input, set reminders three days ahead, and met with each data owner to agree on a delivery day that worked for them. I also added a midpoint check so I would see a late file with time to spare instead of on the deadline.",
+    r: "We hit the deadline every month for the next 12 months, and my manager adopted the checklist for two other reports.", lesson: "Raising a problem early builds more trust than hiding it." },
+];
+const I = (d, extra = "") => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${d}</svg>`;
+const ICON = {
+  home: I('<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>'),
+  stories: I('<rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/><path d="M7 11h6M7 15h4"/>'),
+  interviews: I('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3"/>'),
+  coverage: I('<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>'),
+  practice: I('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>'),
+  pen: I('<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>'),
+  check: I('<path d="M20 6L9 17l-5-5"/>'),
+  target: I('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>'),
+  doc: I('<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>'),
+  cards: I('<rect x="2" y="7" width="15" height="13" rx="2"/><path d="M7 4h13a2 2 0 0 1 2 2v10"/>'),
+  sun: I('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'),
+  moon: I('<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>'),
+  auto: I('<circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/>'),
+  star: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>'),
+  starFill: I('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" fill="currentColor"/>'),
+};
+
+// ================= Helpers =================
+const $ = (sel, root = document) => root.querySelector(sel);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+const words = s => (String(s || "").trim().match(/\S+/g) || []).length;
+const uid = p => p + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const fmtTime = sec => { sec = Math.max(0, Math.round(sec)); return Math.floor(sec / 60) + ":" + String(sec % 60).padStart(2, "0"); };
+const NUM_RE = /(\$?\d[\d,.]*\s?(?:%|percent|x\b|k\b|hours?|days?|weeks?|months?)?)/gi;
+// Renders text with [blanks] as dashed pills and (optionally) numbers highlighted
+function rich(s, nums) {
+  return String(s || "").split(/(\[[^\]]{1,160}\])/g).map((part, i) => {
+    if (i % 2) return `<span class="blank">${esc(part.slice(1, -1))}</span>`;
+    return nums ? part.split(NUM_RE).map((p, j) => j % 2 ? `<mark>${esc(p)}</mark>` : esc(p)).join("") : esc(part);
+  }).join("");
+}
+const hasBlank = s => /\[[^\]]+\]/.test(s || "");
+const WPM = 150;
+const lsGet = k => { try { return localStorage.getItem(k); } catch { return null; } };
+const lsSet = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
+const clone = o => JSON.parse(JSON.stringify(o));
+const todayStr = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
+function daysUntil(date) { if (!date) return null; const [y, m, d] = date.split("-").map(Number); const t = new Date(y, m - 1, d); const n = new Date(); n.setHours(0, 0, 0, 0); return Math.round((t - n) / 86400000); }
+function whenText(date) { const n = daysUntil(date); if (n === null) return "No date yet"; if (n === 0) return "Today"; if (n === 1) return "Tomorrow"; if (n > 1) return `In ${n} days`; if (n === -1) return "Yesterday"; return `${-n} days ago`; }
+function calBox(date) {
+  if (!date) return `<span class="cal none" aria-hidden="true"><span class="m d0">Date</span><span class="d">?</span></span>`;
+  const [y, m, d] = date.split("-").map(Number); const dt = new Date(y, m - 1, d);
+  return `<span class="cal" aria-hidden="true"><span class="m">${dt.toLocaleString("en-US", { month: "short" })}</span><span class="d">${d}</span></span>`;
+}
+const sentences = s => String(s || "").split(/(?<=[.!?])\s+(?=[A-Z\[])/).map(x => x.trim()).filter(Boolean);
+
+function analyze(st) {
+  const w = { s: words(st.s), t: words(st.t), a: words(st.a), r: words(st.r) };
+  const total = w.s + w.t + w.a + w.r;
+  const secs = total / WPM * 60;
+  const iCount = (String(st.a || "").match(/\bI\b|\bI'(m|ve|d|ll)\b|\bmy\b/g) || []).length;
+  const weCount = (String(st.a || "").match(/\bwe\b|\bour\b|\bus\b/gi) || []).length;
+  const blanks = PARTS.some(k => hasBlank(st[k]));
+  const checks = [
+    { ok: w.s > 0 && w.t > 0 && w.a > 0 && w.r > 0 && !blanks, label: blanks ? "Fill in the [blanks]" : "All four parts filled in", why: blanks ? "Replace each bracketed question with what really happened." : "Each part answers a question the interviewer has." },
+    { ok: /\d|percent|half|doubled|tripled/i.test((st.r || "").replace(/\[[^\]]*\]/g, "")), label: "Result has a number", why: "Numbers make results believable and memorable." },
+    { ok: w.a > 0 && iCount >= weCount && iCount > 0, label: "Action says \"I\", not \"we\"", why: "Interviewers are hiring you, not your team." },
+    { ok: w.a > 0 && w.a >= Math.max(w.s, w.t), label: "Action is the longest part", why: "Spend your time on what you did." },
+    { ok: secs >= 60 && secs <= 150, label: "Takes 1 to 2.5 minutes to say", why: "Long enough for detail, short enough to hold attention." },
+  ];
+  return { w, total, secs, checks, score: checks.filter(c => c.ok).length, blanks };
+}
+const meter = (score, max = 5) => `<span class="meter${score >= 4 ? " hi" : ""}" aria-label="Strength ${score} of ${max}">${Array.from({ length: max }, (_, i) => `<b class="${i < score ? "on" : ""}"></b>`).join("")}</span>`;
+const balance = a => a.total ? `<span class="balance" aria-hidden="true">${PARTS.filter(k => a.w[k]).map(k => `<i class="${k}" style="flex:${a.w[k]}"></i>`).join("")}</span>` : "";
+function ring(pct, size = 76, stroke = 8, track = "rgba(255,255,255,.14)", color = "var(--R)") {
+  const r = (size - stroke) / 2, c = 2 * Math.PI * r;
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true"><circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="${track}" stroke-width="${stroke}"/><circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="${color}" stroke-width="${stroke}" stroke-linecap="round" stroke-dasharray="${c.toFixed(2)}" stroke-dashoffset="${(c * (1 - Math.max(0, Math.min(1, pct / 100)))).toFixed(2)}"/></svg>`;
+}
+
+let toastTimer;
+function toast(msg) { const el = $("#toast"); el.textContent = msg; el.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 2800); }
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); toast("Copied"); }
+  catch {
+    const ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand("copy"); } catch {} ta.remove(); toast(ok ? "Copied" : "Copy didn't work here. Select the text and copy it yourself.");
+  }
+}
+const storyText = st => `${st.title || "Untitled story"}\n${[st.role, st.when].filter(Boolean).join(" | ")}\nSkills: ${(st.tags || []).map(t => CNAME[t]).join(", ")}\n\nSituation: ${st.s || ""}\nTask: ${st.t || ""}\nAction: ${st.a || ""}\nResult: ${st.r || ""}${st.lesson ? `\nLesson: ${st.lesson}` : ""}`;
+
+// Confetti for wins
+function celebrate() {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const cv = $("#confetti"); cv.hidden = false;
+  const ctx = cv.getContext("2d"); const W = cv.width = innerWidth, H = cv.height = innerHeight;
+  const css = getComputedStyle(document.documentElement);
+  const cols = ["--S", "--T", "--A", "--R"].map(v => css.getPropertyValue(v).trim());
+  const ps = Array.from({ length: 140 }, () => ({ x: W / 2 + (Math.random() - .5) * 120, y: H * .35, vx: (Math.random() - .5) * 12, vy: -Math.random() * 11 - 4, r: Math.random() * 6 + 4, c: cols[Math.floor(Math.random() * 4)], a: Math.random() * 6, va: (Math.random() - .5) * .3 }));
+  const t0 = performance.now();
+  (function frame(t) {
+    ctx.clearRect(0, 0, W, H);
+    ps.forEach(p => { p.vy += .32; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.a += p.va; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.fillStyle = p.c; ctx.fillRect(-p.r / 2, -p.r / 4, p.r, p.r / 2); ctx.restore(); });
+    if (t - t0 < 1800) requestAnimationFrame(frame); else { ctx.clearRect(0, 0, W, H); cv.hidden = true; }
+  })(t0);
+}
+
+// ================= State =================
+const S = {
+  docs: [], stories: [], interviews: [], settings: { customQ: [] }, loaded: false, mode: "loading", pending: 0,
+  view: "home", draft: null, iv: null, filterTag: null, search: "",
+  edMode: "full", edStep: 0, armedDelete: false, showBreak: false,
+  sample: null, coach: {}, ivBusy: false, ivErr: "",
+  prac: { filter: "", qIndex: Math.floor(Math.random() * 30), start: 0, elapsed: 0, running: false, storyId: "", rating: 0, followup: null, fuBusy: false },
+  imp: null, cue: null, debriefQ: "", debriefStory: "",
+  theme: lsGet("storybank.theme") || "system",
+};
+function applyTheme() {
+  if (S.theme === "system") delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = S.theme;
+  const b = $("#themebtn"); b.innerHTML = S.theme === "light" ? ICON.sun : S.theme === "dark" ? ICON.moon : ICON.auto;
+  b.setAttribute("aria-label", `Theme: ${S.theme}. Change theme`); b.title = `Theme: ${S.theme}`;
+}
+
+// ================= Storage: one private collection, items by id prefix =================
+const store = {
+  col: null,
+  async init() {
+    let db = null, user = null, id = null;
+    try { [db, user] = await Promise.all([window.claude?.use?.("db"), window.claude?.use?.("user")]); } catch {}
+    if (db && user) { try { id = await user.id(); } catch {} }
+    if (db && id) {
+      try {
+        this.col = db.collection("data/users/" + id);
+        S.mode = "db";
+        this.col.onSnapshot(snap => { setDocs(snap.docs.map(d => ({ id: d.id, ...d.data() }))); }, () => { S.mode = "db-error"; renderStatus(); });
+        return;
+      } catch {}
+    }
+    S.mode = "local";
+    let docs = null;
+    try { docs = JSON.parse(lsGet("storybank.v2") || "null"); } catch {}
+    if (!docs) { try { docs = JSON.parse(lsGet("storybank.v1") || "[]"); } catch { docs = []; } }
+    setDocs(docs);
+  },
+  body(d) { const { id, _saved, ...rest } = d; return clone(rest); },
+  persistLocal() { lsSet("storybank.v2", JSON.stringify(S.docs)); },
+  async save(d) {
+    if (S.mode.startsWith("db")) {
+      S.pending++; renderStatus();
+      try { await this.col.doc(d.id).set(this.body(d)); }
+      catch (e) { toast(e?.code === "quota_exceeded" ? "Storage is full. Delete a few items and try again." : "Couldn't save. Check your connection, then edit again."); }
+      finally { S.pending--; renderStatus(); }
+    } else {
+      const c = { id: d.id, ...this.body(d) };
+      const i = S.docs.findIndex(x => x.id === d.id);
+      const docs = [...S.docs]; if (i >= 0) docs[i] = c; else docs.push(c);
+      setDocs(docs); this.persistLocal();
+    }
+  },
+  async remove(id) {
+    if (S.mode.startsWith("db")) { try { await this.col.doc(id).delete(); } catch { toast("Couldn't delete. Try again."); } }
+    else { setDocs(S.docs.filter(x => x.id !== id)); this.persistLocal(); }
+  },
+};
+function setDocs(docs) {
+  S.docs = docs;
+  S.stories = docs.filter(d => d.id.startsWith("s_"));
+  S.interviews = docs.filter(d => d.id.startsWith("i_"));
+  const st = docs.find(d => d.id === "settings");
+  S.settings = { customQ: [], ...(st || {}) };
+  S.loaded = true; onData();
+}
+function saveSettings() { store.save({ id: "settings", ...S.settings }); }
+
+// Drafts: the open story/interview is edited locally and saved shortly after typing stops
+function saver(key) {
+  let timer = null;
+  return {
+    schedule() { clearTimeout(timer); if (S[key]) S[key].updatedAt = Date.now(); timer = setTimeout(() => { timer = null; const d = S[key]; if (d) { d._saved = true; store.save(clone(d)); } }, 600); },
+    flush() { if (!timer) return; clearTimeout(timer); timer = null; const d = S[key]; if (d) { d._saved = true; store.save(clone(d)); } },
+    cancel() { clearTimeout(timer); timer = null; },
+  };
+}
+const storySaver = saver("draft"), ivSaver = saver("iv");
+const flushAll = () => { storySaver.flush(); ivSaver.flush(); };
+
+function overlay(list, draft) {
+  const out = list.map(s => (draft && s.id === draft.id ? draft : s));
+  if (draft && !out.some(s => s.id === draft.id)) out.push(draft);
+  return out;
+}
+const stories = () => overlay(S.stories, S.draft).sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0) || (b.updatedAt || 0) - (a.updatedAt || 0));
+const savedStories = () => stories().filter(s => S.stories.some(x => x.id === s.id));
+const interviews = () => overlay(S.interviews, S.iv).sort((a, b) => {
+  const da = daysUntil(a.date), dbb = daysUntil(b.date);
+  const ua = da === null ? 9999 : da < 0 ? 100000 - da : da, ub = dbb === null ? 9999 : dbb < 0 ? 100000 - dbb : dbb;
+  return ua - ub;
+});
+
+function onData() {
+  if (S.draft?._saved && !S.stories.some(s => s.id === S.draft.id) && !S.pending) S.draft = null;
+  if (S.iv?._saved && !S.interviews.some(s => s.id === S.iv.id) && !S.pending) S.iv = null;
+  renderStatus(); renderTabs();
+  if (S.view === "stories") renderLibrary();
+  else if (S.view === "interviews") { renderIvList(); if (!S.iv) renderIvDetail(); }
+  else render();
+  if (S.cue) renderCue();
+}
+
+// ================= Progress =================
+function coverage() {
+  const all = savedStories();
+  return COMP.map(c => {
+    const list = all.filter(s => (s.tags || []).includes(c.id));
+    const best = list.reduce((m, s) => Math.max(m, analyze(s).score), 0);
+    const state = list.length === 0 ? "bad" : (list.length >= 2 && best >= 4) || best === 5 ? "good" : "warn";
+    return { ...c, list, best, state };
+  });
+}
+function progress() {
+  const all = savedStories(); const real = all.filter(s => !s.example);
+  const cov = coverage();
+  const parts = {
+    cov: cov.reduce((m, c) => m + (c.state === "good" ? 1 : c.state === "warn" ? .5 : 0), 0) / COMP.length,
+    str: all.length ? all.reduce((m, s) => m + analyze(s).score, 0) / all.length / 5 : 0,
+    prac: all.length ? all.filter(s => (s.practice || []).length).length / all.length : 0,
+  };
+  const pct = Math.round((parts.cov * .5 + parts.str * .3 + parts.prac * .2) * 100);
+  const ivs = S.interviews;
+  const steps = [
+    { id: "write", done: real.length >= 1, title: "Add your first story", body: "Write one with the step-by-step guide, or import drafts from your resume.", go: real.length ? "Add a story" : "Start writing", color: "var(--S)", icon: ICON.pen },
+    { id: "strong", done: real.some(s => analyze(s).score >= 4), title: "Make it strong", body: "Aim for 4 of 5 checks. The checklist shows exactly what to fix.", go: "Strengthen a story", color: "var(--T)", icon: ICON.check },
+    { id: "prep", done: ivs.some(i => (i.match?.questions || []).length) || lsGet("storybank.matched") === "1", title: "Prep for an interview", body: "Add a job posting to see likely questions and which story answers each.", go: "Add an interview", color: "var(--A)", icon: ICON.target },
+    { id: "practice", done: all.some(s => (s.practice || []).length), title: "Practice out loud", body: "Answer a real question against the clock. Three times makes it natural.", go: "Practice now", color: "var(--R)", icon: ICON.practice },
+  ];
+  return { pct, parts, steps, next: steps.find(s => !s.done), cov, all, real };
+}
+function goStep(id) {
+  if (id === "write") return newStory();
+  if (id === "strong") { const weakest = savedStories().filter(s => !s.example).sort((a, b) => analyze(a).score - analyze(b).score)[0]; return weakest ? openStory(weakest.id) : newStory(); }
+  if (id === "prep") return newInterview();
+  setView("practice");
+}
+
+// ================= Chrome =================
+function renderStatus() {
+  const el = $("#status"); const span = el.querySelector("span");
+  const set = (cls, txt) => { el.className = "status " + cls; span.textContent = txt; el.title = txt; };
+  if (!S.loaded) return set("saving", "Loading");
+  if (S.pending > 0) return set("saving", "Saving");
+  if (S.mode === "local") return set("local", "Saved in this browser");
+  if (S.mode === "db-error") return set("local", "Reconnecting");
+  set("", "Saved privately");
+}
+const TABS = [["home", "Home"], ["stories", "Stories"], ["interviews", "Interviews"], ["coverage", "Skills"], ["practice", "Practice"]];
+function renderTabs() {
+  const b = (id, label, short) => `<button data-tab="${id}" aria-current="${S.view === id ? "page" : "false"}">${ICON[id]}${short ? `<span>${label}</span>` : label}</button>`;
+  $("#tabs").innerHTML = TABS.map(([id, l]) => b(id, l)).join("");
+  $("#btabs").innerHTML = TABS.map(([id, l]) => b(id, l, true)).join("");
+}
+function setView(v) { flushAll(); S.view = v; S.armedDelete = false; render(); window.scrollTo({ top: 0 }); }
+function render() {
+  renderTabs();
+  const main = $("#main");
+  const html = S.view === "home" ? viewHome() : S.view === "stories" ? viewSplit("Story library", "Story editor") : S.view === "interviews" ? viewSplit("Interview list", "Interview details") : S.view === "coverage" ? viewCoverage() : viewPractice();
+  main.innerHTML = `<div class="view">${html}</div>`;
+  if (S.view === "stories") { renderLibrary(); renderEditor(); }
+  if (S.view === "interviews") { renderIvList(); renderIvDetail(); }
+  if (S.view === "practice") tickTimer();
+}
+
+// ================= Home =================
+function heroArt() {
+  const card = (x, y, w, h, rot, color, letter, extra, cls) => `<g class="float ${cls}"><g transform="rotate(${rot} ${x + w / 2} ${y + h / 2})"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="${color}"/><text x="${x + 18}" y="${y + 44}" font-family="Bricolage Grotesque, Avenir Next, sans-serif" font-weight="800" font-size="36" fill="var(--on-color)">${letter}</text>${extra}<rect x="${x + 18}" y="${y + 58}" width="${w * .66}" height="7" rx="3.5" fill="var(--on-color)" opacity=".32"/><rect x="${x + 18}" y="${y + 72}" width="${w * .44}" height="7" rx="3.5" fill="var(--on-color)" opacity=".2"/></g></g>`;
+  return `<svg viewBox="0 0 360 270" role="img" aria-label="Four cue cards labeled S, T, A and R">
+    <ellipse cx="185" cy="258" rx="150" ry="10" fill="#000" opacity=".18"/>
+    ${card(38, 40, 152, 98, -9, "var(--S)", "S", "", "")}
+    ${card(180, 22, 150, 98, 7, "var(--T)", "T", "", "d2")}
+    ${card(32, 142, 172, 106, 4, "var(--A)", "A", "", "d3")}
+    ${card(196, 140, 146, 98, -5, "var(--R)", "R", `<text x="242" y="184" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="20" fill="var(--on-color)">+68%</text>`, "")}
+  </svg>`;
+}
+function viewHome() {
+  if (!S.loaded) return `<div class="card preview"><div class="loading">Loading your stories</div></div>`;
+  const P = progress(); const fresh = P.all.length === 0;
+  const nowIdx = P.steps.findIndex(s => !s.done);
+  const upcoming = interviews().filter(i => { const n = daysUntil(i.date); return n !== null && n >= 0; })[0];
+  const tips = { cov: "Tag stories with skills, and add stories for the Missing skills.", str: "Fix the open checks on your weakest story.", prac: "Practice each story out loud at least once." };
+  return `<div class="home">
+    <section class="stage">
+      <div class="stack" style="gap:18px">
+        <h1>${fresh ? `Walk into every interview with your <mark>best stories</mark> ready.` : P.pct >= 80 ? `You're <mark>interview-ready.</mark> Keep it sharp.` : `Let's get your stories <mark>interview-ready.</mark>`}</h1>
+        <p>${fresh ? "Write each career story once, see which skills it proves, and know exactly which one to tell for every question." : "Your readiness score combines skill coverage, story strength, and how much you've practiced out loud."}</p>
+        <div class="hero-boxes">
+          <button class="glass readiness" data-act="breakdown" aria-expanded="${S.showBreak}">
+            <span class="ring">${ring(P.pct)}<b><span>${P.pct}<small style="font-size:12px">%</small></span></b></span>
+            <span><span class="lbl">Interview readiness</span><span class="next">${P.next ? "Next: " + esc(P.next.title) : "All four steps done"}</span></span>
+          </button>
+          ${upcoming ? `<button class="glass nextiv" data-openiv="${upcoming.id}"><span class="lbl">Next interview</span><span class="when">${esc(whenText(upcoming.date))}</span><span class="next">${esc(upcoming.company || "Untitled")}${upcoming.role ? " · " + esc(upcoming.role) : ""}</span></button>` : ""}
+        </div>
+        ${S.showBreak ? `<div class="glass breakdown">${[["cov", "Skill coverage", "50%"], ["str", "Story strength", "30%"], ["prac", "Practice", "20%"]].map(([k, l, w]) => `<div class="stack" style="gap:6px"><span class="row between"><b>${l}</b><span class="mono" style="font-size:12px;color:var(--stage-muted)">${Math.round(P.parts[k] * 100)}% · weight ${w}</span></span><div class="bar"><div class="fill" style="width:${P.parts[k] * 100}%"></div></div><p style="color:var(--stage-muted)">${tips[k]}</p></div>`).join("")}</div>` : ""}
+        <div class="row">
+          ${P.next ? `<button class="btn bright" data-step="${P.next.id}">${esc(P.next.go)} &rarr;</button>` : `<button class="btn bright" data-tab="practice">Practice a question &rarr;</button>`}
+          ${fresh ? `<button class="btn ghost" data-act="import">${ICON.doc} Import from resume</button>` : `<button class="btn ghost" data-act="cueall">${ICON.cards} Cue cards</button>`}
+        </div>
+      </div>
+      <div class="art">${heroArt()}</div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div><h2>Four steps to interview-ready</h2><p class="lede">Do them in order the first time. After that, come back before each interview.</p></div></div>
+      <div class="path">
+        ${P.steps.map((s, i) => `<button class="card step ${s.done ? "done" : i === nowIdx ? "now" : ""}" data-step="${s.id}">
+          <span class="num"><span>Step ${i + 1}</span>${s.done ? `<span class="tick" aria-label="Done">✓</span>` : i === nowIdx ? `<span class="state warn">Up next</span>` : ""}</span>
+          <span class="icon" style="background:${s.color}">${s.icon}</span>
+          <span class="h3">${esc(s.title)}</span>
+          <p>${esc(s.body)}</p>
+          <span class="go">${s.done ? "Done. Open again" : esc(s.go)} &rarr;</span>
+        </button>`).join("")}
+      </div>
+      ${fresh ? `<p class="note" style="margin-top:12px">Want to look around first? <button class="btn ghost small" data-act="examples">Load 3 example stories</button></p>` : ""}
+    </section>
+
+    <section class="card explain">
+      <div class="intro">
+        <span class="lbl">The method</span>
+        <h2>What is a STAR story?</h2>
+        <p class="muted">STAR is how interviewers expect you to answer "Tell me about a time when..." questions. It keeps your answer focused and easy to follow.</p>
+        <p class="note">Every story you write here follows these four parts.</p>
+      </div>
+      <div class="parts">${PARTS.map(k => `<div class="part"><span class="L ${k}">${k.toUpperCase()}</span><div><b>${GUIDE[k].name}: ${esc(GUIDE[k].one.toLowerCase())}</b><div class="eg">"${esc(GUIDE[k].eg)}"</div></div></div>`).join("")}</div>
+    </section>
+  </div>`;
+}
+
+// ================= Stories =================
+const viewSplit = (a, b) => `<div class="split ${S.view === "stories" ? (S.draft ? "editing" : "") : (S.iv ? "editing" : "")}" id="split"><section class="lib" id="lib" aria-label="${a}"></section><section class="edcol" id="edcol" aria-label="${b}"></section></div>`;
+function filtered() {
+  const q = S.search.trim().toLowerCase();
+  return stories().filter(s => (!S.filterTag || (s.tags || []).includes(S.filterTag)) && (!q || [s.title, s.role, s.s, s.t, s.a, s.r].join(" ").toLowerCase().includes(q)));
+}
+const emptyArt = `<svg viewBox="0 0 130 86" aria-hidden="true"><rect x="8" y="16" width="66" height="46" rx="9" fill="var(--S)" transform="rotate(-8 41 39)"/><rect x="44" y="22" width="76" height="52" rx="9" fill="var(--R)"/><rect x="57" y="40" width="44" height="6" rx="3" fill="var(--on-color)" opacity=".4"/><rect x="57" y="52" width="30" height="6" rx="3" fill="var(--on-color)" opacity=".25"/></svg>`;
+function renderLibrary() {
+  const lib = $("#lib"); if (!lib || S.view !== "stories") return;
+  $("#split")?.classList.toggle("editing", !!S.draft);
+  if (!S.loaded) { lib.innerHTML = `<div class="card empty"><div class="loading">Loading your stories</div></div>`; return; }
+  const all = stories();
+  if (!all.length) {
+    lib.innerHTML = `<div class="card empty">${emptyArt}<h3>No stories yet</h3><p class="muted">Most interviews draw on six to eight stories. The fastest start is importing drafts from your resume, then filling in the details.</p><div class="row"><button class="btn primary" data-act="import">${ICON.doc} Import from resume</button><button class="btn" data-act="new">Write one</button></div><button class="btn ghost small" data-act="examples">Or load 3 example stories</button></div>`;
+    return;
+  }
+  const used = new Set(all.flatMap(s => s.tags || []));
+  const focused = document.activeElement?.id === "search";
+  lib.innerHTML = `
+    <div class="lib-tools"><input type="search" id="search" placeholder="Search stories" value="${esc(S.search)}" aria-label="Search stories"><button class="btn primary" data-act="new">+ New</button></div>
+    <div class="tagbar" role="group" aria-label="Filter by skill"><button class="chip ${!S.filterTag ? "on" : ""}" data-filter="">All ${all.length}</button>${COMP.filter(c => used.has(c.id)).map(c => `<button class="chip ${S.filterTag === c.id ? "on" : ""}" data-filter="${c.id}">${esc(c.name)}</button>`).join("")}</div>
+    <div class="cards">${filtered().map(cardHtml).join("") || `<p class="note">No stories match. Try another skill or search.</p>`}</div>
+    <div class="row">
+      <button class="btn ghost small" data-act="import">${ICON.doc} Import from resume</button>
+      <button class="btn ghost small" data-act="cueall">${ICON.cards} Cue cards</button>
+      <button class="btn ghost small" data-act="copyall">Copy all as text</button>
+      ${all.some(s => s.example) ? `<button class="btn ghost small" data-act="clearex">Remove examples</button>` : ""}
+    </div>`;
+  if (focused) { const s = $("#search"); s.focus(); s.setSelectionRange(s.value.length, s.value.length); }
+}
+function cardHtml(st) {
+  const a = analyze(st); const n = (st.practice || []).length;
+  return `<button class="scard ${S.draft?.id === st.id ? "sel" : ""}" data-open="${st.id}">
+    <span class="t"><span>${esc(st.title || "Untitled story")}</span>${st.pinned ? `<span class="pin" aria-label="Pinned">${ICON.starFill.replace("<svg", '<svg width="16" height="16"')}</span>` : ""}</span>
+    ${balance(a)}
+    <span class="meta">${meter(a.score)}<span class="mono">${fmtTime(a.secs)}</span>${n ? `<span>Practiced ${n}x</span>` : ""}${st.example ? `<span class="chip ex">Example</span>` : ""}${a.blanks ? `<span class="chip draft">Draft</span>` : ""}</span>
+    ${st.r ? `<span class="res">${rich(st.r, true)}</span>` : ""}
+    ${(st.tags || []).length ? `<span class="tags">${st.tags.map(t => `<span class="chip">${esc(CNAME[t] || t)}</span>`).join("")}</span>` : ""}
+  </button>`;
+}
+function editorPlaceholder() {
+  return `<div class="card editor">
+    <span class="lbl" style="margin:0">Select a story to edit, or start a new one</span>
+    <h2>A strong story, part by part</h2>
+    <div class="parts">${PARTS.map(k => `<div class="part"><span class="L ${k}">${k.toUpperCase()}</span><div><b>${GUIDE[k].name}</b><div class="eg">${esc(GUIDE[k].tip)}</div></div></div>`).join("")}</div>
+    <div class="row"><button class="btn primary" data-act="new">Write a new story</button><button class="btn" data-act="import">${ICON.doc} Import from resume</button></div>
+  </div>`;
+}
+function renderEditor() {
+  const col = $("#edcol"); if (!col || S.view !== "stories") return;
+  const st = S.draft;
+  if (!st) { col.innerHTML = editorPlaceholder(); return; }
+  const guided = S.edMode === "guided";
+  col.innerHTML = `<div class="card editor">
+    <div class="ed-head">
+      <div class="row"><button class="btn ghost small" data-act="close">&larr; All stories</button>${st.example ? `<span class="chip ex">Example story</span>` : ""}</div>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Editor mode"><button data-mode="guided" aria-pressed="${guided}">Step by step</button><button data-mode="full" aria-pressed="${!guided}">Full view</button></div>
+        <button class="btn small" data-act="pin" aria-pressed="${!!st.pinned}">${st.pinned ? ICON.starFill : ICON.star}${st.pinned ? "Pinned" : "Pin"}</button>
+        <button class="btn small" data-act="copy">Copy</button>
+        <button class="btn small danger ${S.armedDelete ? "armed" : ""}" data-act="delete">${S.armedDelete ? "Confirm delete" : "Delete"}</button>
+      </div>
+    </div>
+    ${guided ? guidedBody(st) : fullBody(st)}
+    <div id="coach"></div>
+  </div>`;
+  renderSide(); renderCoach();
+}
+const tagPicker = st => `<div><span class="lbl">Which skills does this story prove? Pick one to three.</span><div class="tagpick" role="group" aria-label="Skills">${COMP.map(c => { const on = (st.tags || []).includes(c.id); return `<button class="chip ${on ? "on" : ""}" data-tag="${c.id}" aria-pressed="${on}">${esc(c.name)}</button>`; }).join("")}</div></div>`;
+const basics = st => `
+  <div><label class="lbl" for="f-title">Story name</label><input type="text" class="title-in" id="f-title" data-field="title" value="${esc(st.title || "")}" placeholder="e.g. Fixed recurring payroll errors"></div>
+  <div class="two">
+    <div><label class="lbl" for="f-role">Role and company</label><input type="text" id="f-role" data-field="role" value="${esc(st.role || "")}" placeholder="e.g. Program Analyst, Riverside"></div>
+    <div><label class="lbl" for="f-when">When</label><input type="text" id="f-when" data-field="when" value="${esc(st.when || "")}" placeholder="e.g. 2024"></div>
+  </div>`;
+function fullBody(st) {
+  const blanks = analyze(st).blanks;
+  return `${blanks ? `<div class="tipbox r"><b>This is a draft</b>Replace each <span class="blank">bracketed question</span> with what really happened. Delete the brackets when you're done.</div>` : ""}${basics(st)}${tagPicker(st)}
+    <div class="ed-body">
+      <div class="fields">
+        ${PARTS.map(k => `<div class="fld ${k}"><div class="fh"><span class="L ${k}">${k.toUpperCase()}</span><label for="f-${k}">${GUIDE[k].name}</label><span class="wc" id="wc-${k}"></span></div>
+          <textarea id="f-${k}" data-field="${k}" rows="${k === "a" ? 6 : 3}" placeholder="${esc(GUIDE[k].asks[0])}">${esc(st[k] || "")}</textarea>
+          <div class="hint">${esc(GUIDE[k].tip)}</div></div>`).join("")}
+        <div><label class="lbl" for="f-lesson">Lesson learned (optional)</label><input type="text" id="f-lesson" data-field="lesson" value="${esc(st.lesson || "")}" placeholder="What you'd repeat or do differently"></div>
+      </div>
+      <aside class="side" id="side" aria-label="Story check"></aside>
+    </div>`;
+}
+const GSTEPS = ["basics", "s", "t", "a", "r", "review"];
+function guidedBody(st) {
+  const step = GSTEPS[S.edStep];
+  const bar = `<div class="progress" role="progressbar" aria-valuemin="1" aria-valuemax="${GSTEPS.length}" aria-valuenow="${S.edStep + 1}" aria-label="Step ${S.edStep + 1} of ${GSTEPS.length}">${GSTEPS.map((_, i) => `<span class="${i < S.edStep ? "done" : i === S.edStep ? "now" : ""}"></span>`).join("")}</div>`;
+  let body;
+  if (step === "basics") body = `<div class="gstep"><div><span class="lbl">Step 1 of 6</span><h3 class="lg">Name your story</h3><p class="muted">A short name you'll recognize, like a headline. You can change it later.</p></div>${basics(st)}${tagPicker(st)}</div>`;
+  else if (step === "review") {
+    const a = analyze(st);
+    body = `<div class="gstep"><div><span class="lbl">Step 6 of 6</span><h3 class="lg">${a.score >= 4 ? "Nice work. This story is interview-ready." : "Almost there. The checklist shows quick fixes."}</h3></div>
+      <div class="ed-body"><div class="fields">${PARTS.map(k => `<div class="fld ${k}"><div class="fh"><span class="L ${k}">${k.toUpperCase()}</span><b>${GUIDE[k].name}</b><button class="btn ghost small" style="margin-left:auto" data-gostep="${GSTEPS.indexOf(k)}">Edit</button></div><div>${st[k] ? rich(st[k], k === "r") : `<span class="muted">Not written yet</span>`}</div></div>`).join("")}</div><aside class="side" id="side"></aside></div></div>`;
+  } else {
+    const g = GUIDE[step];
+    body = `<div class="gstep">
+      <div class="big"><span class="L ${step}">${step.toUpperCase()}</span><div><span class="lbl" style="margin:0">Step ${S.edStep + 1} of 6</span><h3>${g.name}: ${esc(g.one.toLowerCase())}</h3></div></div>
+      <ul class="asks">${g.asks.map(q => `<li>${esc(q)}</li>`).join("")}</ul>
+      <div class="ed-body"><div class="fields"><label class="sr" for="f-${step}">${g.name}</label><textarea id="f-${step}" data-field="${step}" placeholder="Answer the questions above in a few sentences. You can polish later.">${esc(st[step] || "")}</textarea><div class="note mono" id="wc-${step}"></div></div><aside class="side" id="side"></aside></div>
+    </div>`;
+  }
+  const n = GSTEPS[S.edStep + 1];
+  return `${bar}${body}<div class="gnav"><button class="btn" data-act="gprev" ${S.edStep === 0 ? "disabled" : ""}>&larr; Back</button>${n ? `<button class="btn primary" data-act="gnext">Next: ${n === "review" ? "Review" : GUIDE[n].name} &rarr;</button>` : `<button class="btn primary" data-act="gdone">Finish</button>`}</div>`;
+}
+let lastScore = {};
+function renderSide() {
+  const st = S.draft; const box = $("#side"); if (!st || !box) return;
+  const a = analyze(st);
+  if (lastScore[st.id] !== undefined && lastScore[st.id] < 5 && a.score === 5) { celebrate(); toast("5 out of 5. This story is ready."); }
+  lastScore[st.id] = a.score;
+  PARTS.forEach(k => { const el = $("#wc-" + k); if (el) el.textContent = a.w[k] + " words"; });
+  const step = S.edMode === "guided" ? GSTEPS[S.edStep] : null;
+  const tip = step && GUIDE[step] ? `<div class="tipbox ${step}"><b>Tip</b>${esc(GUIDE[step].tip)}<div class="eg">Example: "${esc(GUIDE[step].eg)}"</div></div>` : "";
+  box.innerHTML = `${tip}
+    <div><span class="lbl">Time to say it</span>
+      <div class="clock"><span class="big">${fmtTime(a.secs)}</span><span class="muted mono" style="font-size:12px">${a.total} words</span></div>
+      <div class="bar" aria-hidden="true"><div class="zone" style="left:33.3%;width:50%"></div><div class="fill" style="width:${Math.min(100, a.secs / 180 * 100)}%"></div></div>
+      <div class="scale" aria-hidden="true"><span>0:00</span><span>1:00</span><span>2:00</span><span>3:00</span></div>
+    </div>
+    ${a.total ? `<div><span class="lbl">Balance of parts</span>${balance(a)}</div>` : ""}
+    <div><span class="lbl">Strength ${a.score} of 5</span>
+      <ul class="ck">${a.checks.map(c => `<li class="${c.ok ? "ok" : "no"}"><span class="ic">${c.ok ? "✓" : ""}</span><span>${esc(c.label)}${c.ok ? "" : `<small>${esc(c.why)}</small>`}</span></li>`).join("")}</ul>
+    </div>
+    ${S.sample ? `<button class="btn small" data-act="coach"><span class="ai">AI</span> Get coach feedback</button>` : ""}`;
+}
+
+// ================= AI coach =================
+function renderCoach() {
+  const box = $("#coach"); if (!box || !S.draft) return;
+  const c = S.coach[S.draft.id];
+  if (!c) { box.innerHTML = ""; return; }
+  if (c.busy) { box.innerHTML = `<div class="coach"><div class="loading">Your coach is reading the story</div></div>`; return; }
+  if (c.err) { box.innerHTML = `<div class="coach"><div class="err">${esc(c.err)}</div></div>`; return; }
+  const r = c.result;
+  box.innerHTML = `<div class="coach">
+    <div class="row between"><h3><span class="ai">AI</span> Coach notes</h3><button class="btn ghost small" data-act="coach">Run again</button></div>
+    ${r.verdict ? `<p class="verdict">${esc(r.verdict)}</p>` : ""}
+    ${r.strengths.length ? `<div><span class="lbl">Working well</span><ul>${r.strengths.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}
+    ${r.fixes.length ? `<div><span class="lbl">Fix next</span><div class="stack">${r.fixes.map(f => { const k = String(f.section || "").slice(0, 1).toLowerCase(); const ok = PARTS.includes(k); return `<div class="fix"><span class="L ${ok ? k : ""}">${ok ? k.toUpperCase() : "•"}</span><div><b>${esc(f.issue || "")}</b><div class="muted" style="font-size:14px">${esc(f.suggestion || "")}</div></div></div>`; }).join("")}</div></div>` : ""}
+    ${r.followups.length ? `<div><span class="lbl">Follow-ups to expect</span><ul>${r.followups.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}
+    ${r.spoken ? `<div><div class="row between"><span class="lbl">How to say it out loud</span><button class="btn ghost small" data-act="copyspoken">Copy</button></div><div class="spoken">${rich(r.spoken)}</div><p class="note">Uses only facts you wrote. Replace anything in brackets before you use it.</p></div>` : ""}
+  </div>`;
+}
+function aiError(e) {
+  if (e?.code === "not_granted") { S.sample = null; return "AI features are off for this page. You can turn them on from the page's permissions menu."; }
+  if (e?.code === "rate_limited") return "Too many requests right now. Wait a minute, then try again.";
+  if (e?.code === "invalid_json") return "The answer came back in an unexpected format. Try again.";
+  return "Couldn't reach the AI. Check your connection and try again.";
+}
+async function runCoach() {
+  const st = S.draft; if (!st || !S.sample) return;
+  if (analyze(st).total < 25) { toast("Write a little more first, then ask for feedback"); return; }
+  S.coach[st.id] = { busy: true }; renderCoach();
+  $("#coach")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  const prompt = `You are a direct, encouraging coach for behavioral job interviews. The candidate is moving into product management.
+Review this STAR story. Never invent facts, numbers, names or outcomes. Where a number is missing, write a placeholder like [add the result number].
+
+Title: ${st.title || ""}
+Role: ${st.role || ""}
+Skills it should prove: ${(st.tags || []).map(t => CNAME[t]).join(", ") || "not chosen"}
+Situation: ${st.s || ""}
+Task: ${st.t || ""}
+Action: ${st.a || ""}
+Result: ${st.r || ""}
+
+Reply with only JSON in exactly this shape:
+{"verdict":"one plain, encouraging sentence on how interview-ready this is",
+ "strengths":["up to 3 short points"],
+ "fixes":[{"section":"S|T|A|R","issue":"short label","suggestion":"one concrete sentence"}],
+ "followups":["2 or 3 probing follow-up questions an interviewer would likely ask"],
+ "spoken":"the story rewritten as natural first-person speech, 160 to 260 words, short sentences, using only the facts given"}`;
+  try {
+    const r = await S.sample.json(prompt, { modelTier: "default" });
+    if (!r || typeof r !== "object") throw { code: "invalid_json" };
+    S.coach[st.id] = { result: {
+      verdict: String(r.verdict || ""),
+      strengths: Array.isArray(r.strengths) ? r.strengths.map(String).slice(0, 4) : [],
+      fixes: Array.isArray(r.fixes) ? r.fixes.filter(f => f && typeof f === "object").slice(0, 5) : [],
+      followups: Array.isArray(r.followups) ? r.followups.map(String).slice(0, 4) : [],
+      spoken: String(r.spoken || ""),
+    } };
+  } catch (e) { S.coach[st.id] = { err: aiError(e) }; }
+  if (S.draft?.id === st.id) { renderCoach(); renderSide(); }
+}
+
+// ================= Story editing =================
+function openStory(id, mode) {
+  flushAll();
+  const st = stories().find(s => s.id === id); if (!st) return;
+  S.draft = { ...clone(st), _saved: true };
+  S.armedDelete = false; S.edMode = mode || (analyze(st).blanks ? "full" : "full"); S.edStep = 0; lastScore[id] = analyze(st).score;
+  if (S.view !== "stories") { S.view = "stories"; render(); } else { renderLibrary(); renderEditor(); }
+  window.scrollTo({ top: 0 });
+}
+function newStory(prefill = {}) {
+  flushAll();
+  const st = { id: uid("s_"), title: "", role: "", when: "", tags: [], s: "", t: "", a: "", r: "", lesson: "", practice: [], createdAt: Date.now(), updatedAt: Date.now(), ...prefill };
+  S.draft = { ...st, _saved: false }; S.armedDelete = false; S.edMode = "guided"; S.edStep = 0;
+  S.view = "stories"; render(); window.scrollTo({ top: 0 });
+  setTimeout(() => $("#f-title")?.focus(), 40);
+}
+async function loadExamples() {
+  for (const [i, ex] of EXAMPLES.entries()) await store.save({ id: uid("s_") + i, ...clone(ex), example: true, practice: [], createdAt: Date.now(), updatedAt: Date.now() - i });
+  toast("Added 3 example stories. Remove them anytime from the Stories list.");
+  if (S.view === "home") setView("stories");
+}
+function gotoStep(i) {
+  storySaver.flush();
+  S.edStep = Math.max(0, Math.min(GSTEPS.length - 1, i)); renderEditor();
+  const k = GSTEPS[S.edStep]; setTimeout(() => (PARTS.includes(k) ? $("#f-" + k) : null)?.focus(), 30);
+}
+
+// ================= Resume import =================
+function openImport() { flushAll(); S.imp = { text: lsGet("storybank.resume") || "", busy: false, err: "", drafts: null, picked: new Set() }; renderImport(); }
+function renderImport() {
+  const o = $("#overlay"); const m = S.imp;
+  if (!m) { o.innerHTML = ""; document.body.classList.remove("locked"); return; }
+  document.body.classList.add("locked");
+  let inner;
+  if (m.busy) inner = `<div class="loading">Reading your resume and drafting stories. This takes about 20 seconds.</div>`;
+  else if (m.drafts) inner = `
+    <p class="muted">Pick the experiences you want to turn into stories. Each draft uses only what your resume says, and asks you to fill in the rest in <span class="blank">brackets</span>.</p>
+    <div class="drafts">${m.drafts.map((d, i) => `<label class="dcard ${m.picked.has(i) ? "on" : ""}"><input type="checkbox" data-pick="${i}" ${m.picked.has(i) ? "checked" : ""}><span class="stack" style="gap:6px"><span class="dt">${esc(d.title)}</span><span class="note">${esc([d.role, d.when].filter(Boolean).join(" · "))}</span><span class="ds">${rich(d.a)}</span><span class="row">${(d.tags || []).map(t => `<span class="chip">${esc(CNAME[t])}</span>`).join("")}</span></span></label>`).join("")}</div>
+    <div class="row between"><button class="btn ghost" data-act="impback">&larr; Back</button><button class="btn primary" data-act="impadd" ${m.picked.size ? "" : "disabled"}>Add ${m.picked.size} ${m.picked.size === 1 ? "story" : "stories"}</button></div>`;
+  else inner = `
+    <p class="muted">Paste the text of your resume. ${S.sample ? "AI will pick the experiences that make the best interview stories and draft each one in STAR form." : "Each bullet point becomes a draft story you can fill in."} Nothing is invented: anything your resume doesn't say becomes a question for you to answer.</p>
+    <label class="lbl" for="imp-text">Your resume</label>
+    <textarea id="imp-text" placeholder="Paste your resume here">${esc(m.text)}</textarea>
+    ${m.err ? `<div class="err">${esc(m.err)}</div>` : ""}
+    <div class="row between"><button class="btn ghost" data-act="impclose">Cancel</button><button class="btn primary" data-act="imprun">${S.sample ? `<span class="ai">AI</span> ` : ""}Draft my stories</button></div>`;
+  o.innerHTML = `<div class="overlay" data-act="impclose-bg"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="imp-h"><div class="row between"><h2 id="imp-h">Import from resume</h2><button class="btn ghost small" data-act="impclose" aria-label="Close">✕</button></div>${inner}</div></div>`;
+  if (!m.busy && !m.drafts) setTimeout(() => $("#imp-text")?.focus(), 30);
+}
+function keywordDrafts(text) {
+  const lines = text.split(/\n+/).map(l => l.trim()).filter(Boolean);
+  let role = ""; const out = [];
+  for (const l of lines) {
+    const isBullet = /^[-•*▪◦●·]\s*/.test(l) || (/^[A-Z][a-z]+ed\b|^(Led|Built|Ran|Managed|Created|Developed|Designed|Coordinated|Improved|Reduced|Increased)\b/.test(l) && l.length > 50);
+    if (!isBullet) { if (l.length < 90) role = l; continue; }
+    const b = l.replace(/^[-•*▪◦●·]\s*/, "");
+    if (b.length < 35) continue;
+    const low = b.toLowerCase();
+    const tags = COMP.map(c => ({ id: c.id, n: c.kw.filter(k => low.includes(k)).length })).filter(x => x.n).sort((a, z) => z.n - a.n).slice(0, 2).map(x => x.id);
+    out.push({ title: b.split(/\s+/).slice(0, 7).join(" ").replace(/[,.;:]$/, "").replace(/(\s+(in|for|to|and|of|with|the|a|an|on|across|that|through))+$/i, ""), role, when: "", tags,
+      s: "[Where were you, and what problem or opportunity came up?]", t: "[What were you responsible for, and why did it matter?]",
+      a: `I ${b.charAt(0).toLowerCase() + b.slice(1)} [Which steps did you take, and which decisions did you make?]`,
+      r: /\d/.test(b) ? `[Describe the result: ${b.match(/[^.]*\d[^.]*/)?.[0]?.trim() || "add the number"}]` : "[What changed? Add a number.]" });
+    if (out.length >= 8) break;
+  }
+  return out;
+}
+async function runImport() {
+  const text = ($("#imp-text")?.value || "").trim(); S.imp.text = text; lsSet("storybank.resume", text);
+  if (text.length < 120) { S.imp.err = "Paste more of your resume, including the bullet points under each job."; renderImport(); return; }
+  S.imp.err = "";
+  if (!S.sample) { const d = keywordDrafts(text); if (!d.length) { S.imp.err = "No bullet points found. Make sure each accomplishment is on its own line."; renderImport(); return; } S.imp.drafts = d; S.imp.picked = new Set(d.map((_, i) => i).slice(0, 4)); renderImport(); return; }
+  S.imp.busy = true; renderImport();
+  const prompt = `You help a job seeker turn their resume into STAR interview stories.
+From the resume below, pick the 4 to 7 experiences that would make the strongest behavioral interview stories (ownership, problem solving, measurable impact, working with people).
+For each, draft a STAR story using ONLY facts stated in the resume. Never invent numbers, names, tools, events or outcomes.
+Wherever the resume does not say something, write a short, specific question in square brackets for the candidate to answer, for example [What error rate were you seeing before?]. Write in first person ("I ...").
+Allowed skill ids: ${COMP.map(c => c.id).join(", ")}.
+
+RESUME:
+${text.slice(0, 12000)}
+
+Reply with only a JSON array, each item shaped like:
+{"title":"short headline of the story","role":"job title, company","when":"years if stated","tags":["1 to 3 skill ids"],"s":"situation","t":"task","a":"action, the longest part","r":"result"}`;
+  try {
+    const r = await S.sample.json(prompt, { modelTier: "default" });
+    const arr = (Array.isArray(r) ? r : Array.isArray(r?.stories) ? r.stories : []).filter(d => d && d.title).slice(0, 8).map(d => ({
+      title: String(d.title), role: String(d.role || ""), when: String(d.when || ""),
+      tags: (Array.isArray(d.tags) ? d.tags : []).filter(t => CNAME[t]).slice(0, 3),
+      s: String(d.s || ""), t: String(d.t || ""), a: String(d.a || ""), r: String(d.r || ""),
+    }));
+    if (!arr.length) throw { code: "invalid_json" };
+    S.imp.drafts = arr; S.imp.picked = new Set(arr.map((_, i) => i));
+  } catch (e) {
+    if (e?.code === "not_granted") { S.sample = null; S.imp.drafts = keywordDrafts(text); S.imp.picked = new Set(S.imp.drafts.map((_, i) => i).slice(0, 4)); }
+    else S.imp.err = aiError(e);
+  }
+  if (S.imp) { S.imp.busy = false; renderImport(); }
+}
+async function addImported() {
+  const m = S.imp; const chosen = m.drafts.filter((_, i) => m.picked.has(i));
+  S.imp = null; renderImport();
+  for (const [i, d] of chosen.entries()) await store.save({ id: uid("s_") + i, ...d, lesson: "", practice: [], imported: true, createdAt: Date.now(), updatedAt: Date.now() - i });
+  toast(`Added ${chosen.length} draft ${chosen.length === 1 ? "story" : "stories"}. Fill in the brackets next.`);
+  celebrate();
+  setView("stories");
+}
+
+// ================= Interviews =================
+const ivPrep = iv => {
+  const ids = iv.storyIds || [];
+  const all = savedStories();
+  const practiced = ids.length > 0 && ids.every(id => (all.find(s => s.id === id)?.practice || []).length);
+  const qs = String(iv.myQuestions || "").split("\n").filter(l => l.trim()).length;
+  const items = [
+    { k: "posting", ok: String(iv.jd || "").trim().length > 80, t: "Paste the job posting", auto: true },
+    { k: "matched", ok: (iv.match?.questions || []).length > 0, t: "Match your stories to likely questions", auto: true },
+    { k: "practiced", ok: practiced, t: "Practice every matched story out loud", auto: true },
+    { k: "research", ok: !!iv.checks?.research, t: "Research the company, product and team" },
+    { k: "questions", ok: qs >= 3, t: "Prepare 3 questions to ask them", auto: true },
+    { k: "logistics", ok: !!iv.checks?.logistics, t: "Confirm time, link or address, and who you'll meet" },
+  ];
+  return { items, done: items.filter(i => i.ok).length, total: items.length };
+};
+function renderIvList() {
+  const lib = $("#lib"); if (!lib || S.view !== "interviews") return;
+  $("#split")?.classList.toggle("editing", !!S.iv);
+  if (!S.loaded) { lib.innerHTML = `<div class="card empty"><div class="loading">Loading</div></div>`; return; }
+  const all = interviews();
+  if (!all.length) { lib.innerHTML = `<div class="card empty">${emptyIvArt}<h3>No interviews yet</h3><p class="muted">Add an interview, even one you're only applying for. Paste the posting and you'll see the questions they're likely to ask and which story answers each.</p><button class="btn primary" data-act="newiv">+ Add an interview</button></div>`; return; }
+  const up = all.filter(i => { const n = daysUntil(i.date); return n === null || n >= 0; });
+  const past = all.filter(i => { const n = daysUntil(i.date); return n !== null && n < 0; });
+  const card = iv => { const p = ivPrep(iv); const n = daysUntil(iv.date); return `<button class="icard ${S.iv?.id === iv.id ? "sel" : ""} ${n !== null && n < 0 ? "past" : ""}" data-openiv="${iv.id}">${calBox(iv.date)}<span class="stack" style="gap:2px;min-width:0"><span class="co">${esc(iv.company || "Untitled interview")}</span><span class="ro">${esc([iv.role, iv.stage].filter(Boolean).join(" · ") || "Add the role")}</span><span class="note">${esc(n !== null && n < 0 ? (iv.debrief?.outcome || "Add a debrief") : whenText(iv.date))}</span></span><span class="mini-ring">${ring(p.done / p.total * 100, 40, 5, "var(--soft)", p.done === p.total ? "var(--good)" : "var(--A)")}<b>${p.done}/${p.total}</b></span></button>`; };
+  lib.innerHTML = `<div class="row between"><h3>Interviews</h3><button class="btn primary small" data-act="newiv">+ Add</button></div>
+    ${up.length ? `<span class="lbl" style="margin:4px 0 0">Coming up</span><div class="cards">${up.map(card).join("")}</div>` : ""}
+    ${past.length ? `<span class="lbl" style="margin:10px 0 0">Past</span><div class="cards">${past.map(card).join("")}</div>` : ""}`;
+}
+const emptyIvArt = `<svg viewBox="0 0 130 86" aria-hidden="true"><rect x="22" y="14" width="86" height="64" rx="10" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/><rect x="22" y="14" width="86" height="18" rx="10" fill="var(--A)"/><rect x="22" y="24" width="86" height="8" fill="var(--A)"/><circle cx="48" cy="52" r="7" fill="var(--S)"/><circle cx="66" cy="52" r="7" fill="var(--T)"/><circle cx="84" cy="52" r="7" fill="var(--R)"/></svg>`;
+function newInterview() {
+  flushAll();
+  S.iv = { id: uid("i_"), company: "", role: "", date: "", stage: STAGES[1], jd: "", match: null, storyIds: [], myQuestions: "", checks: {}, debrief: { asked: [], rating: 0, outcome: "", notes: "" }, createdAt: Date.now(), updatedAt: Date.now(), _saved: false };
+  S.ivErr = ""; S.armedDelete = false;
+  S.view = "interviews"; render(); window.scrollTo({ top: 0 });
+  setTimeout(() => $("#iv-company")?.focus(), 40);
+}
+function openInterview(id) {
+  flushAll();
+  const iv = interviews().find(x => x.id === id); if (!iv) return;
+  S.iv = { ...clone(iv), _saved: true }; S.ivErr = ""; S.armedDelete = false; S.debriefQ = ""; S.debriefStory = "";
+  if (S.view !== "interviews") { S.view = "interviews"; render(); } else { renderIvList(); renderIvDetail(); }
+  window.scrollTo({ top: 0 });
+}
+function renderIvDetail() {
+  const col = $("#edcol"); if (!col || S.view !== "interviews") return;
+  const iv = S.iv;
+  if (!iv) {
+    col.innerHTML = `<div class="card editor"><span class="lbl" style="margin:0">How interview prep works</span><h2>From posting to prepared</h2>
+      <div class="parts">${[["s", "Add the posting", "Paste the job description so Story Bank knows what they care about."], ["t", "See likely questions", "Get six questions they're likely to ask, each matched to one of your stories."], ["a", "Work the checklist", "Practice the matched stories, research the company, and prepare your own questions."], ["r", "Debrief afterward", "Log the questions you actually got. They join your practice bank."]].map(([k, h, b], i) => `<div class="part"><span class="L ${k}">${i + 1}</span><div><b>${h}</b><div class="eg">${b}</div></div></div>`).join("")}</div>
+      <div class="row"><button class="btn primary" data-act="newiv">+ Add an interview</button></div></div>`;
+    return;
+  }
+  const p = ivPrep(iv); const n = daysUntil(iv.date); const isPast = n !== null && n < 0;
+  const byId = Object.fromEntries(stories().map(s => [s.id, s]));
+  const m = iv.match;
+  const all = savedStories();
+  col.innerHTML = `<div class="card editor">
+    <div class="ed-head">
+      <button class="btn ghost small" data-act="closeiv">&larr; All interviews</button>
+      <div class="row">
+        ${(iv.storyIds || []).length ? `<button class="btn small" data-act="cueiv">${ICON.cards} Cue cards</button>` : ""}
+        <button class="btn small danger ${S.armedDelete ? "armed" : ""}" data-act="deliv">${S.armedDelete ? "Confirm delete" : "Delete"}</button>
+      </div>
+    </div>
+    <div class="ivhead">
+      <div class="stack" style="gap:4px;flex:1;min-width:220px">
+        <label class="sr" for="iv-company">Company</label><input type="text" class="title-in" id="iv-company" data-ivfield="company" value="${esc(iv.company)}" placeholder="Company name">
+      </div>
+      <div class="stack" style="gap:2px;align-items:flex-end"><span class="countdown">${esc(whenText(iv.date))}</span><span class="note">${p.done} of ${p.total} prep steps done</span></div>
+    </div>
+    <div class="three">
+      <div><label class="lbl" for="iv-role">Role</label><input type="text" id="iv-role" data-ivfield="role" value="${esc(iv.role)}" placeholder="e.g. Product Owner"></div>
+      <div><label class="lbl" for="iv-stage">Stage</label><select id="iv-stage" data-ivfield="stage">${STAGES.map(s => `<option ${iv.stage === s ? "selected" : ""}>${esc(s)}</option>`).join("")}</select></div>
+      <div><label class="lbl" for="iv-date">Date</label><input type="date" id="iv-date" data-ivfield="date" value="${esc(iv.date)}"></div>
+    </div>
+
+    <div class="section">
+      <div class="row between"><h3>Prep checklist</h3><span class="state ${p.done === p.total ? "good" : "info"}">${p.done}/${p.total}</span></div>
+      <ul class="checklist">${p.items.map(it => `<li class="${it.ok ? "ok" : ""}">${it.auto ? `<span class="dot">${it.ok ? "✓" : ""}</span>` : `<input type="checkbox" data-ivcheck="${it.k}" ${it.ok ? "checked" : ""} aria-label="${esc(it.t)}">`}<span class="t">${esc(it.t)}</span>${it.auto ? `<span class="auto">updates itself</span>` : ""}</li>`).join("")}</ul>
+    </div>
+
+    <div class="section">
+      <div class="row between"><h3>Job posting</h3>${S.ivBusy ? "" : `<button class="btn primary small" data-act="matchiv">${S.sample ? `<span class="ai">AI</span> ` : ""}${m ? "Match again" : "Match my stories"}</button>`}</div>
+      <label class="sr" for="iv-jd">Job posting</label><textarea id="iv-jd" data-ivfield="jd" rows="6" placeholder="Paste the responsibilities and qualifications">${esc(iv.jd)}</textarea>
+      ${S.ivBusy ? `<div class="loading">Reading the posting and your stories</div>` : ""}
+      ${S.ivErr ? `<div class="err">${esc(S.ivErr)}</div>` : ""}
+      ${m && !S.ivBusy ? `
+        ${m.role ? `<p><b>${esc(m.role)}</b></p>` : ""}
+        <div><span class="lbl">They're looking for</span><div class="row">${(m.themes || []).map(t => `<span class="chip" title="${esc(t.evidence || "")}">${esc(CNAME[t.competency] || t.competency)}</span>`).join("")}</div></div>
+        <div class="stack" style="gap:10px">${(m.questions || []).map((q, i) => { const st = q.storyId && byId[q.storyId]; return `<div class="card qa"><span class="lbl" style="margin:0">Likely question ${i + 1}</span><span class="q">${esc(q.question)}</span><div class="row">${st ? `<button class="btn small" data-open="${st.id}">Tell: ${esc(st.title || "Untitled story")}</button>` : `<span class="state bad">No story yet</span><button class="btn small" data-act="newfor" data-comp="${esc(q.competency || "")}">Write one</button>`}${CNAME[q.competency] ? `<span class="chip">${esc(CNAME[q.competency])}</span>` : ""}</div>${q.angle ? `<span class="angle">${esc(q.angle)}</span>` : ""}</div>`; }).join("")}</div>
+        ${(m.gaps || []).length ? `<div><span class="lbl">Gaps to fill</span><div class="stack" style="gap:8px">${m.gaps.map(g => `<div class="card gap"><b>${esc(CNAME[g.competency] || g.competency)}</b><div class="muted" style="font-size:14px">${esc(g.advice || "")}</div></div>`).join("")}</div></div>` : ""}
+        <p class="note">${m.ai ? "Generated by AI from the posting and your stories. Check each angle against what really happened." : "Keyword match. Turn on AI for this page to get tailored questions and angles."}</p>` : ""}
+    </div>
+
+    <div class="section">
+      <h3>Questions to ask them</h3>
+      <p class="note">One per line. Good questions show you've thought about the role: how success is measured, what the team is working on, what's hardest about the job.</p>
+      <label class="sr" for="iv-q">Questions to ask</label><textarea id="iv-q" data-ivfield="myQuestions" rows="4" placeholder="How will you measure success in the first 90 days?">${esc(iv.myQuestions)}</textarea>
+    </div>
+
+    <details class="section" ${isPast ? "open" : ""}>
+      <summary style="cursor:pointer"><h3 style="display:inline">Debrief</h3> <span class="note">Fill this in right after the interview</span></summary>
+      <div class="stack" style="gap:14px;margin-top:12px">
+        <div><span class="lbl">Questions they asked</span>
+          ${(iv.debrief?.asked || []).length ? `<ul class="asked">${iv.debrief.asked.map((a, i) => `<li><span>${esc(a.q)}${a.storyId && byId[a.storyId] ? `<br><span class="note">You told: ${esc(byId[a.storyId].title)}</span>` : ""}</span><button class="btn ghost small" data-delq="${i}" aria-label="Remove question">✕</button></li>`).join("")}</ul>` : `<p class="note">Each question you add also joins your practice bank.</p>`}
+          <div class="addq" style="margin-top:8px"><label class="sr" for="dq">Question asked</label><input type="text" id="dq" value="${esc(S.debriefQ)}" placeholder="What did they ask?"><label class="sr" for="dqs">Story you told</label><select id="dqs"><option value="">Story you told (optional)</option>${all.map(s => `<option value="${s.id}" ${S.debriefStory === s.id ? "selected" : ""}>${esc(s.title || "Untitled")}</option>`).join("")}</select><button class="btn" data-act="addq">Add</button></div>
+        </div>
+        <div class="two">
+          <div><span class="lbl">How did it go?</span><div class="rate" role="group" aria-label="How it went, 1 to 5">${[1, 2, 3, 4, 5].map(k => `<button data-ivrate="${k}" class="${iv.debrief?.rating === k ? "on" : ""}" aria-pressed="${iv.debrief?.rating === k}">${k}</button>`).join("")}</div></div>
+          <div><label class="lbl" for="iv-out">Outcome</label><select id="iv-out" data-ivdeb="outcome"><option value="">Not yet known</option>${OUTCOMES.map(o => `<option ${iv.debrief?.outcome === o ? "selected" : ""}>${esc(o)}</option>`).join("")}</select></div>
+        </div>
+        <div><label class="lbl" for="iv-notes">Notes for next time</label><textarea id="iv-notes" data-ivdeb="notes" rows="3" placeholder="What went well? What would you tell differently?">${esc(iv.debrief?.notes || "")}</textarea></div>
+      </div>
+    </details>
+  </div>`;
+}
+function matchPrompt(jd, all) {
+  const lib = all.map(s => `- id: ${s.id} | ${s.title || "Untitled"} | skills: ${(s.tags || []).join(", ")} | ${[s.s, s.a, s.r].join(" ").slice(0, 420)}`).join("\n") || "(no stories yet)";
+  return `You help a candidate prepare for a job interview using their own story bank.
+Allowed competency ids: ${COMP.map(c => c.id).join(", ")}.
+
+JOB POSTING:
+${jd.slice(0, 9000)}
+
+CANDIDATE STORIES:
+${lib}
+
+Reply with only JSON in this shape:
+{"role":"short role name and company if stated",
+ "themes":[{"competency":"id","evidence":"short paraphrase of what the posting says"}],
+ "questions":[{"question":"a behavioral question this employer is likely to ask","competency":"id","storyId":"id of the best matching story, or null if none fits","angle":"one sentence on how to tell that story for this role, without inventing facts"}],
+ "gaps":[{"competency":"id","advice":"one sentence on what kind of story to prepare"}]}
+Give 3 to 6 themes and exactly 6 questions. Only use story ids from the list. Use null when no story fits rather than forcing a weak match.`;
+}
+function keywordMatch(jd) {
+  const text = jd.toLowerCase();
+  const scored = COMP.map(c => ({ c, n: c.kw.reduce((m, k) => m + (text.split(k).length - 1), 0) })).filter(x => x.n > 0).sort((a, b) => b.n - a.n).slice(0, 6);
+  const best = id => savedStories().filter(s => (s.tags || []).includes(id)).sort((a, b) => analyze(b).score - analyze(a).score)[0];
+  return { ai: false, role: "", themes: scored.map(x => ({ competency: x.c.id })),
+    questions: scored.map(x => ({ question: (QUESTIONS.find(q => q.c[0] === x.c.id) || QUESTIONS.find(q => q.c.includes(x.c.id))).q, competency: x.c.id, storyId: best(x.c.id)?.id || null, angle: "" })),
+    gaps: scored.filter(x => !best(x.c.id)).map(x => ({ competency: x.c.id, advice: "The posting stresses this skill, and no story is tagged with it yet." })) };
+}
+async function runIvMatch() {
+  const iv = S.iv; if (!iv) return;
+  iv.jd = $("#iv-jd")?.value || iv.jd;
+  if (String(iv.jd).trim().length < 80) { toast("Paste more of the posting first"); return; }
+  S.ivErr = "";
+  const finish = m => { iv.match = m; iv.storyIds = [...new Set(m.questions.map(q => q.storyId).filter(Boolean))]; if (!iv.role && m.role) iv.role = m.role.split(/[,·|@]| at /)[0].trim(); ivSaver.schedule(); ivSaver.flush(); };
+  if (!S.sample) { finish(keywordMatch(iv.jd)); renderIvDetail(); renderIvList(); return; }
+  S.ivBusy = true; renderIvDetail();
+  const all = savedStories();
+  try {
+    const r = await S.sample.json(matchPrompt(iv.jd, all), { modelTier: "default" });
+    const ids = new Set(all.map(s => s.id)); const okC = c => (CNAME[c] ? c : "");
+    const m = { ai: true, role: String(r?.role || ""),
+      themes: (Array.isArray(r?.themes) ? r.themes : []).filter(t => okC(t?.competency)).slice(0, 6),
+      questions: (Array.isArray(r?.questions) ? r.questions : []).filter(q => q && q.question).slice(0, 8).map(q => ({ question: String(q.question), competency: okC(q.competency), storyId: ids.has(q.storyId) ? q.storyId : null, angle: String(q.angle || "") })),
+      gaps: (Array.isArray(r?.gaps) ? r.gaps : []).filter(g => okC(g?.competency)).slice(0, 5) };
+    if (!m.questions.length) throw { code: "invalid_json" };
+    if (S.iv?.id === iv.id) finish(m);
+  } catch (e) {
+    if (e?.code === "not_granted") { S.sample = null; if (S.iv?.id === iv.id) finish(keywordMatch(iv.jd)); }
+    else S.ivErr = aiError(e);
+  }
+  S.ivBusy = false; renderIvDetail(); renderIvList();
+}
+function addDebriefQ() {
+  const iv = S.iv; const q = ($("#dq")?.value || "").trim(); if (!iv || !q) { toast("Type the question first"); return; }
+  const storyId = $("#dqs")?.value || "";
+  iv.debrief = iv.debrief || { asked: [] }; iv.debrief.asked = [...(iv.debrief.asked || []), { q, storyId }];
+  ivSaver.schedule(); ivSaver.flush();
+  if (!S.settings.customQ.some(x => x.q.toLowerCase() === q.toLowerCase())) { S.settings.customQ = [...S.settings.customQ, { q, from: iv.company || "" }].slice(-200); saveSettings(); }
+  S.debriefQ = ""; S.debriefStory = ""; renderIvDetail();
+  setTimeout(() => $("#dq")?.focus(), 20);
+  toast("Added. It's now in your practice questions too.");
+}
+
+// ================= Cue cards =================
+function openCue(ids, label) {
+  flushAll();
+  const list = ids.map(id => savedStories().find(s => s.id === id)).filter(Boolean);
+  if (!list.length) { toast("Add a story first"); return; }
+  S.cue = { ids: list.map(s => s.id), i: 0, label }; renderCue();
+}
+function renderCue() {
+  const o = $("#overlay"); const c = S.cue;
+  if (!c) { o.innerHTML = ""; document.body.classList.remove("locked"); return; }
+  document.body.classList.add("locked");
+  const st = savedStories().find(s => s.id === c.ids[c.i]);
+  if (!st) { S.cue = null; return renderCue(); }
+  const beats = sentences(st.a).slice(0, 3).map(x => x.length > 150 ? x.slice(0, 147).replace(/\s\S*$/, "") + "..." : x);
+  const hook = sentences(st.s)[0] || st.s;
+  o.innerHTML = `<div class="overlay cue" role="dialog" aria-modal="true" aria-label="Cue cards">
+    <div class="cue-top"><span class="lbl" style="margin:0;color:var(--stage-muted)">${esc(c.label)} · ${c.i + 1} of ${c.ids.length}</span><button class="btn ghost small" data-act="cueclose">Done ✕</button></div>
+    <article class="cue-card" id="cuecard">
+      <div class="stack" style="gap:8px"><div class="row">${(st.tags || []).map(t => `<span class="chip">${esc(CNAME[t])}</span>`).join("")}</div><h2>${esc(st.title || "Untitled story")}</h2>${st.role ? `<span class="note">${esc([st.role, st.when].filter(Boolean).join(" · "))}</span>` : ""}</div>
+      <div class="cue-row"><span class="L s">S</span><div class="txt">${rich(hook)}</div></div>
+      ${st.t ? `<div class="cue-row"><span class="L t">T</span><div class="txt">${rich(sentences(st.t)[0] || st.t)}</div></div>` : ""}
+      <div class="cue-row"><span class="L a">A</span><ol class="beats">${beats.map(b => `<li><span>${rich(b)}</span></li>`).join("") || "<li>Add your actions</li>"}</ol></div>
+      <div class="cue-row"><span class="L r">R</span><div class="txt" style="font-weight:600">${rich(st.r, true) || "Add your result"}</div></div>
+    </article>
+    <div class="cue-nav"><button class="btn" data-act="cueprev" ${c.i === 0 ? "disabled" : ""}>&larr; Prev</button><div class="cue-dots" aria-hidden="true">${c.ids.map((_, i) => `<i class="${i === c.i ? "on" : ""}"></i>`).join("")}</div><button class="btn" data-act="cuenext" ${c.i === c.ids.length - 1 ? "disabled" : ""}>Next &rarr;</button></div>
+  </div>`;
+  const card = $("#cuecard"); let x0 = null;
+  card.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
+  card.addEventListener("touchend", e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 50) cueGo(dx < 0 ? 1 : -1); });
+}
+function cueGo(d) { const c = S.cue; if (!c) return; const n = c.i + d; if (n < 0 || n >= c.ids.length) return; c.i = n; renderCue(); }
+
+// ================= Coverage =================
+function viewCoverage() {
+  const cov = coverage();
+  const n = st => cov.filter(c => c.state === st).length;
+  const label = { good: "Ready", warn: "Thin", bad: "Missing" };
+  return `<div class="sec-head"><div><h2>Which skills can you prove?</h2><p class="lede">Interviewers test the same skills again and again. A skill is ready when you have two stories for it, or one story that passes every check.</p></div>
+      <div class="cov-sum"><span class="pill"><b style="color:var(--good)">${n("good")}</b> Ready</span><span class="pill"><b style="color:var(--warn)">${n("warn")}</b> Thin</span><span class="pill"><b style="color:var(--bad)">${n("bad")}</b> Missing</span></div></div>
+    <div class="grid">${cov.map(c => {
+      const q = QUESTIONS.find(x => x.c.includes(c.id));
+      return `<button class="card tile ${c.state}" data-cov="${c.id}">
+        <span class="tr"><span class="h3">${esc(c.name)}</span><span class="state ${c.state}">${label[c.state]}</span></span>
+        <span class="tr"><span class="dots" aria-hidden="true">${[0, 1, 2].map(i => `<i class="${i < c.list.length ? "on" : ""}"></i>`).join("")}</span><span class="mono note">${c.list.length} ${c.list.length === 1 ? "story" : "stories"}</span></span>
+        <span class="sub">${c.list.length ? esc(c.list.slice(0, 2).map(s => s.title || "Untitled").join(" · ")) : "Typical question: " + esc(q?.q || "")}</span>
+        <span class="act">${c.list.length ? "See stories" : "Write one now"} &rarr;</span>
+      </button>`;
+    }).join("")}</div>`;
+}
+
+// ================= Practice =================
+const allQuestions = () => [...QUESTIONS, ...S.settings.customQ.map(x => ({ q: x.q, c: [], from: x.from || "an interview" }))];
+const pracQuestions = () => S.prac.filter === "mine" ? allQuestions().filter(q => q.from) : S.prac.filter ? QUESTIONS.filter(q => q.c.includes(S.prac.filter)) : allQuestions();
+const currentQ = () => { const l = pracQuestions(); return l.length ? l[S.prac.qIndex % l.length] : QUESTIONS[0]; };
+const pracElapsed = () => (S.prac.elapsed + (S.prac.running ? Date.now() - S.prac.start : 0)) / 1000;
+function pracTarget() { const st = stories().find(s => s.id === S.prac.storyId); return st ? Math.max(60, analyze(st).secs) : 120; }
+function viewPractice() {
+  const q = currentQ(); const all = savedStories();
+  const fits = all.filter(s => (s.tags || []).some(t => q.c.includes(t))).sort((a, b) => analyze(b).score - analyze(a).score);
+  if (!S.prac.storyId && fits[0]) S.prac.storyId = fits[0].id;
+  const st = all.find(s => s.id === S.prac.storyId);
+  const done = S.prac.elapsed && !S.prac.running;
+  const log = all.flatMap(s => (s.practice || []).map(p => ({ ...p, title: s.title || "Untitled story" }))).sort((a, b) => b.at - a.at).slice(0, 8);
+  const mine = S.settings.customQ.length;
+  return `<div class="prac">
+    <section class="qstage">
+      <div class="row between">
+        <select id="pfilter" aria-label="Practice a skill" style="width:auto;max-width:100%"><option value="">All questions</option>${mine ? `<option value="mine" ${S.prac.filter === "mine" ? "selected" : ""}>Asked in my interviews (${mine})</option>` : ""}${COMP.map(c => `<option value="${c.id}" ${S.prac.filter === c.id ? "selected" : ""}>${esc(c.name)}</option>`).join("")}</select>
+        <button class="btn ghost small" data-act="nextq">New question &rarr;</button>
+      </div>
+      <div><span class="lbl">The interviewer asks</span><div class="qtext">${esc(q.q)}</div></div>
+      <div class="row">${q.from ? `<span class="chip">Asked at ${esc(q.from)}</span>` : q.c.map(c => `<span class="chip">${esc(CNAME[c])}</span>`).join("")}</div>
+      <div><label class="lbl" for="pstory">Story you'll tell</label>
+        <select id="pstory"><option value="">${all.length ? "Choose a story" : "Add a story first"}</option>${all.map(s => `<option value="${s.id}" ${S.prac.storyId === s.id ? "selected" : ""}>${esc(s.title || "Untitled story")}${fits.includes(s) ? " (good fit)" : ""}</option>`).join("")}</select></div>
+      <div class="timer-wrap">
+        <div class="tring" id="tring">${ring(0, 120, 10)}<span class="tv" id="timer">0:00</span></div>
+        <div class="stack" style="gap:8px">
+          <span class="lbl" style="margin:0">Target ${fmtTime(pracTarget())}. Answer out loud.</span>
+          <div class="row"><button class="btn bright" data-act="timer">${S.prac.running ? "Stop" : S.prac.elapsed ? "Resume" : "Start answering"}</button>${done ? `<button class="btn ghost small" data-act="resettimer">Reset</button>` : ""}</div>
+        </div>
+      </div>
+      ${done ? `<div><span class="lbl">How confident did that feel?</span><div class="row"><div class="rate" role="group" aria-label="Confidence from 1 to 5">${[1, 2, 3, 4, 5].map(n => `<button data-rate="${n}" class="${S.prac.rating === n ? "on" : ""}" aria-pressed="${S.prac.rating === n}">${n}</button>`).join("")}</div><button class="btn" data-act="logprac" ${!S.prac.storyId || !S.prac.rating ? "disabled" : ""}>Save this practice</button></div></div>` : ""}
+      ${S.sample && st ? `<div class="stack" style="gap:8px"><button class="btn ghost small" data-act="followup" style="align-self:flex-start;border-color:rgba(255,255,255,.22)" ${S.prac.fuBusy ? "disabled" : ""}><span class="ai">AI</span> Ask me a follow-up</button>${S.prac.fuBusy ? `<div class="loading" style="color:var(--stage-muted)">Thinking like the interviewer</div>` : S.prac.followup ? `<div class="followup">${esc(S.prac.followup)}</div>` : ""}</div>` : ""}
+      ${st ? `<details><summary>Peek at your story</summary><div class="spoken" style="margin-top:8px">${esc(storyText(st))}</div></details>` : ""}
+    </section>
+    <div class="stack" style="gap:16px">
+      <div class="card tips"><h3>How to practice</h3><ol><li>Pick a story that fits the question.</li><li>Press start and answer out loud, as if to a real interviewer.</li><li>Stop, rate how it felt, and save it.</li><li>Repeat until it feels natural, usually about three times.</li></ol></div>
+      <div class="card log"><h3>Recent practice</h3>${log.length ? `<ul>${log.map(p => `<li><span><b>${esc(p.title)}</b><br><span class="muted">${esc(p.q || "")}</span></span><span class="mono muted" style="text-align:right">${fmtTime(p.secs)}<br>${"●".repeat(p.rating)}${"○".repeat(5 - p.rating)}</span></li>`).join("")}</ul>` : `<p class="note">Your practice sessions will show up here.</p>`}</div>
+    </div>
+  </div>`;
+}
+let timerInt = null;
+function tickTimer() {
+  const el = $("#timer"); const tr = $("#tring"); if (!el || !tr) return;
+  const secs = pracElapsed(), target = pracTarget();
+  el.textContent = fmtTime(secs);
+  const svg = tr.querySelector("svg"); if (svg) svg.outerHTML = ring(secs / target * 100, 120, 10, "rgba(255,255,255,.14)", secs > target * 1.25 ? "var(--A)" : "var(--R)");
+}
+function toggleTimer() {
+  if (S.prac.running) { S.prac.elapsed += Date.now() - S.prac.start; S.prac.running = false; clearInterval(timerInt); }
+  else { S.prac.start = Date.now(); S.prac.running = true; S.prac.rating = 0; clearInterval(timerInt); timerInt = setInterval(tickTimer, 250); }
+  render();
+}
+async function logPractice() {
+  const st = stories().find(s => s.id === S.prac.storyId); if (!st || !S.prac.rating) return;
+  const entry = { at: Date.now(), secs: Math.round(S.prac.elapsed / 1000), rating: S.prac.rating, q: currentQ().q };
+  const first = !savedStories().some(s => (s.practice || []).length);
+  const updated = { ...clone(st), practice: [...(st.practice || []), entry].slice(-30), updatedAt: Date.now() };
+  if (S.draft?.id === st.id) S.draft.practice = updated.practice;
+  await store.save(updated);
+  S.prac.elapsed = 0; S.prac.rating = 0; S.prac.followup = null;
+  toast("Practice saved. Nice work."); if (first) celebrate(); render();
+}
+async function runFollowup() {
+  const st = stories().find(s => s.id === S.prac.storyId); if (!st || !S.sample) return;
+  S.prac.fuBusy = true; render();
+  try {
+    const r = await S.sample(`You are a sharp but fair interviewer for a product role. The candidate was asked: "${currentQ().q}" and answered with this story:\n\n${storyText(st)}\n\nAsk ONE probing follow-up question that tests whether they really drove the outcome, how they made decisions, or what they would do differently. Reply with only the question.`, { modelTier: "quick", cache: false });
+    S.prac.followup = String(r.text || "").trim();
+  } catch (e) { S.prac.followup = aiError(e); }
+  S.prac.fuBusy = false; render();
+}
+
+// ================= Events =================
+function armDelete(t) {
+  S.armedDelete = true; t.classList.add("armed"); t.textContent = "Confirm delete";
+  setTimeout(() => { if (S.armedDelete) { S.armedDelete = false; const b = document.querySelector(".btn.danger.armed"); if (b) { b.classList.remove("armed"); b.textContent = "Delete"; } } }, 4000);
+}
+document.addEventListener("click", e => {
+  const t = e.target.closest("button, [data-act='impclose-bg']"); if (!t) return;
+  const d = t.dataset;
+  if (d.act === "impclose-bg") { if (e.target === t && !S.imp?.busy) { S.imp = null; renderImport(); } return; }
+  if (d.tab) return setView(d.tab);
+  if (d.step) return goStep(d.step);
+  if (d.open) { if (S.cue) { S.cue = null; renderCue(); } return openStory(d.open); }
+  if (d.openiv) return openInterview(d.openiv);
+  if (d.filter !== undefined) { S.filterTag = d.filter || null; renderLibrary(); return; }
+  if (d.mode) { storySaver.flush(); S.edMode = d.mode; S.edStep = 0; renderEditor(); return; }
+  if (d.gostep) return gotoStep(+d.gostep);
+  if (d.tag && S.draft) {
+    const tags = new Set(S.draft.tags || []); tags.has(d.tag) ? tags.delete(d.tag) : tags.add(d.tag);
+    S.draft.tags = COMP.map(c => c.id).filter(id => tags.has(id));
+    t.classList.toggle("on"); t.setAttribute("aria-pressed", tags.has(d.tag));
+    storySaver.schedule(); renderLibrary(); return;
+  }
+  if (d.cov) { const c = coverage().find(x => x.id === d.cov); if (c.list.length) { S.filterTag = c.id; setView("stories"); } else newStory({ tags: [c.id] }); return; }
+  if (d.rate) { S.prac.rating = +d.rate; render(); return; }
+  if (d.ivrate && S.iv) { S.iv.debrief = { ...(S.iv.debrief || {}), rating: +d.ivrate }; ivSaver.schedule(); renderIvDetail(); return; }
+  if (d.delq !== undefined && S.iv) { S.iv.debrief.asked = S.iv.debrief.asked.filter((_, i) => i !== +d.delq); ivSaver.schedule(); renderIvDetail(); return; }
+  switch (d.act) {
+    case "theme": S.theme = S.theme === "system" ? "light" : S.theme === "light" ? "dark" : "system"; lsSet("storybank.theme", S.theme); applyTheme(); toast(`Theme: ${S.theme === "system" ? "matches your device" : S.theme}`); break;
+    case "breakdown": S.showBreak = !S.showBreak; render(); break;
+    case "new": newStory(); break;
+    case "newfor": newStory({ tags: d.comp ? [d.comp] : [] }); break;
+    case "examples": loadExamples(); break;
+    case "clearex": stories().filter(s => s.example).forEach(s => store.remove(s.id)); if (S.draft?.example) { S.draft = null; renderEditor(); } toast("Example stories removed"); break;
+    case "close": storySaver.flush(); S.draft = null; S.armedDelete = false; renderLibrary(); renderEditor(); break;
+    case "pin": if (S.draft) { S.draft.pinned = !S.draft.pinned; storySaver.schedule(); renderEditor(); renderLibrary(); } break;
+    case "copy": if (S.draft) copyText(storyText(S.draft)); break;
+    case "copyall": copyText(stories().map(storyText).join("\n\n----------\n\n")); break;
+    case "copyspoken": { const c = S.coach[S.draft?.id]; if (c?.result?.spoken) copyText(c.result.spoken); break; }
+    case "coach": runCoach(); break;
+    case "gnext": gotoStep(S.edStep + 1); break;
+    case "gprev": gotoStep(S.edStep - 1); break;
+    case "gdone": { storySaver.schedule(); storySaver.flush(); S.edMode = "full"; const sc = analyze(S.draft).score; renderEditor(); toast(sc >= 4 ? "Story saved and ready" : "Story saved. Use the checklist to strengthen it."); if (sc >= 4) celebrate(); break; }
+    case "delete":
+      if (!S.armedDelete) armDelete(t);
+      else { const id = S.draft.id; const saved = S.stories.some(s => s.id === id); storySaver.cancel(); S.draft = null; S.armedDelete = false; if (saved) store.remove(id); else onData(); renderEditor(); toast("Story deleted"); }
+      break;
+    case "import": openImport(); break;
+    case "impclose": S.imp = null; renderImport(); break;
+    case "imprun": runImport(); break;
+    case "impback": S.imp.drafts = null; renderImport(); break;
+    case "impadd": addImported(); break;
+    case "newiv": newInterview(); break;
+    case "closeiv": ivSaver.flush(); S.iv = null; S.armedDelete = false; renderIvList(); renderIvDetail(); break;
+    case "deliv":
+      if (!S.armedDelete) armDelete(t);
+      else { const id = S.iv.id; const saved = S.interviews.some(s => s.id === id); ivSaver.cancel(); S.iv = null; S.armedDelete = false; if (saved) store.remove(id); else onData(); renderIvDetail(); toast("Interview deleted"); }
+      break;
+    case "matchiv": runIvMatch(); break;
+    case "addq": addDebriefQ(); break;
+    case "cueiv": openCue(S.iv.storyIds || [], `${S.iv.company || "Interview"} stories`); break;
+    case "cueall": { const list = savedStories(); const pinned = list.filter(s => s.pinned); openCue((pinned.length ? pinned : list).map(s => s.id), pinned.length ? "Pinned stories" : "All stories"); break; }
+    case "cueclose": S.cue = null; renderCue(); break;
+    case "cueprev": cueGo(-1); break;
+    case "cuenext": cueGo(1); break;
+    case "nextq": S.prac.qIndex++; S.prac.followup = null; S.prac.storyId = ""; S.prac.elapsed = 0; S.prac.running = false; clearInterval(timerInt); render(); break;
+    case "timer": toggleTimer(); break;
+    case "resettimer": S.prac.elapsed = 0; S.prac.rating = 0; render(); break;
+    case "logprac": logPractice(); break;
+    case "followup": runFollowup(); break;
+  }
+});
+document.addEventListener("input", e => {
+  const el = e.target; const d = el.dataset;
+  if (el.id === "search") { S.search = el.value; renderLibrary(); return; }
+  if (el.id === "imp-text" && S.imp) { S.imp.text = el.value; return; }
+  if (el.id === "dq") { S.debriefQ = el.value; return; }
+  if (d.field && S.draft) {
+    S.draft[d.field] = el.value; storySaver.schedule(); renderSide();
+    const card = document.querySelector(`.scard[data-open="${S.draft.id}"]`);
+    if (card) card.outerHTML = cardHtml(S.draft); else renderLibrary();
+    return;
+  }
+  if ((d.ivfield || d.ivdeb) && S.iv) {
+    if (d.ivfield) S.iv[d.ivfield] = el.value; else S.iv.debrief = { ...(S.iv.debrief || {}), [d.ivdeb]: el.value };
+    ivSaver.schedule();
+    if (["company", "role", "date", "stage", "outcome"].includes(d.ivfield || d.ivdeb) || d.ivfield === "myQuestions" || d.ivfield === "jd") {
+      const card = document.querySelector(`.icard[data-openiv="${S.iv.id}"]`);
+      if (!card || d.ivfield === "date") renderIvList(); else renderIvList();
+      if (d.ivfield === "date" || d.ivfield === "myQuestions" || d.ivfield === "jd") { const h = document.querySelector(".countdown"); if (h) h.textContent = whenText(S.iv.date); updateChecklist(); }
+    }
+  }
+});
+function updateChecklist() {
+  const p = ivPrep(S.iv); const ul = document.querySelector(".checklist"); if (!ul) return;
+  ul.querySelectorAll("li").forEach((li, i) => { const it = p.items[i]; li.classList.toggle("ok", it.ok); const dot = li.querySelector(".dot"); if (dot) dot.textContent = it.ok ? "✓" : ""; });
+  const st = ul.parentElement.querySelector(".state"); if (st) { st.textContent = `${p.done}/${p.total}`; st.className = "state " + (p.done === p.total ? "good" : "info"); }
+  const n = document.querySelector(".ivhead .note"); if (n) n.textContent = `${p.done} of ${p.total} prep steps done`;
+}
+document.addEventListener("change", e => {
+  const el = e.target;
+  if (el.id === "pfilter") { S.prac.filter = el.value; S.prac.qIndex = 0; S.prac.storyId = ""; S.prac.followup = null; render(); }
+  if (el.id === "pstory") { S.prac.storyId = el.value; S.prac.followup = null; render(); }
+  if (el.id === "dqs") S.debriefStory = el.value;
+  if (el.dataset.pick !== undefined && S.imp) { const i = +el.dataset.pick; el.checked ? S.imp.picked.add(i) : S.imp.picked.delete(i); renderImport(); }
+  if (el.dataset.ivcheck && S.iv) { S.iv.checks = { ...(S.iv.checks || {}), [el.dataset.ivcheck]: el.checked }; ivSaver.schedule(); updateChecklist(); renderIvList(); }
+  if ((el.dataset.ivfield === "stage" || el.dataset.ivfield === "date" || el.dataset.ivdeb === "outcome") && S.iv) renderIvList();
+});
+document.addEventListener("keydown", e => {
+  if (S.cue) { if (e.key === "ArrowRight") cueGo(1); else if (e.key === "ArrowLeft") cueGo(-1); else if (e.key === "Escape") { S.cue = null; renderCue(); } return; }
+  if (S.imp && e.key === "Escape" && !S.imp.busy) { S.imp = null; renderImport(); return; }
+  if (e.key === "Enter" && e.target.id === "dq") { e.preventDefault(); addDebriefQ(); return; }
+  if (e.key === "Escape" && S.armedDelete) { S.armedDelete = false; S.view === "stories" ? renderEditor() : renderIvDetail(); }
+});
+window.addEventListener("pagehide", flushAll);
+
+// ================= Boot =================
+applyTheme(); render(); renderStatus(); store.init();
+(async () => { try { const s = await window.claude?.use?.("sample"); if (s) { S.sample = s; if (S.view === "stories") renderSide(); else if (S.view === "interviews") renderIvDetail(); else render(); if (S.imp && !S.imp.busy) renderImport(); } } catch {} })();
+})();
+</script>
+
+</body>
+</html>
